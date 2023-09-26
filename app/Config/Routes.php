@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\MaterialController;
+use App\Controllers\IncController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -8,3 +9,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
+$routes->get('inc', 'IncController::index');
