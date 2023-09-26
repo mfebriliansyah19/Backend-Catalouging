@@ -11,6 +11,15 @@ class Inc extends Model
     protected $useAutoIncrement = true;
     protected $allowedFields    = ['INC','INC_NAME'];
 
+    public function getAllIncData() {
+        return $this->select('m_inc.INC AS Inc, m_inc.INC_NAME AS IncName')
+                    // ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
+                    // ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
+                    // ->groupBy('d_material.material_number')
+                    ->orderBy('m_inc.id')
+                    // ->asArray()
+                    ->findAll();
+    }
     // Dates
     // protected $useTimestamps = true;
     // protected $dateFormat    = 'datetime';

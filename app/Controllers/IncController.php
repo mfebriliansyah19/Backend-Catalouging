@@ -3,15 +3,12 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use CodeIgniter\API\ResponseTrait;
 use App\Models\Inc;
 
 class IncController extends ResourceController
 {
-    
-    // protected $modelName = 'App\Models\Inc';
-    use ResponseTrait;
-    protected $format = 'json';
+        protected $modelName = 'App\Models\Inc';
+
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -23,8 +20,24 @@ class IncController extends ResourceController
         header('Access-Control-Allow-Methods: GET, POST');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new Inc();
-        $data['inc'] = $model->orderBy('id')->findAll();
-        return $this->respond($data,200);
+        $incData = $model->getAllIncData();
+        // return $this->respond($data,200);
+
+        if(!empty($incData)){
+            $response = [
+                'status' => 'success',
+                'message' => 'Data Inc Berhasil Ditemukan',
+                'data' => $incData
+            ];
+            return $this->respond($response,200);
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Data Inc Tidak Ditemukan!!',
+                'data' => []
+            ];
+            return $this->respond($response, 404);
+        }
     }
 
     /**

@@ -3,15 +3,12 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use CodeIgniter\API\ResponseTrait;
 use App\Models\Material;
 
 class MaterialController extends ResourceController
 {
-    
-    // protected $modelName = 'App\Models\Material';
-    use ResponseTrait;
-    protected $format = 'json';
+    protected $modelName = 'App\Models\Material';
+
     /**
      * Return an array of resource objects, themselves in array format
      *
@@ -23,67 +20,51 @@ class MaterialController extends ResourceController
         header('Access-Control-Allow-Methods: GET, POST');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new Material();
-        $data['material'] = $model->orderBy('id')->findAll();
-        return $this->respond($data,200);
-    }
+        $materialData = $model->getAllMaterialData();
+        // return $this->respond($data, 200);
 
-    /**
-     * Return the properties of a resource object
-     *
-     * @return mixed
-     */
-    public function show($id = null)
-    {
-        //
+        if (!empty($materialData)) {
+            $response = [
+                'status' => 'success',
+                'message' => 'Data Material Berhasil Ditemukan',
+                'data' => $materialData
+            ];
+            return $this->respond($response, 200);
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Data Material Tidak Ditemukan!!',
+                'data' => []
+            ];
+            return $this->respond($response, 404);
+        }
     }
-
-    /**
-     * Return a new resource object, with default properties
-     *
-     * @return mixed
-     */
-    public function new()
+    public function updateCat($id)
     {
-        //
-    }
+        try {
+            $newCat = $this->request->getVar('newCat');
+            $model = new Material();
+            $result = $model->updateCat($id, $newCat);
 
-    /**
-     * Create a new resource object, from "posted" parameters
-     *
-     * @return mixed
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Return the editable properties of a resource object
-     *
-     * @return mixed
-     */
-    public function edit($id = null)
-    {
-        //
-    }
-
-    /**
-     * Add or update a model resource, from "posted" properties
-     *
-     * @return mixed
-     */
-    public function update($id = null)
-    {
-        //
-    }
-
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
-    public function delete($id = null)
-    {
-        //
+            if ($result) {
+                $response = [
+                    'status' => 'success',
+                    'message' => 'Cataloguer berhasil diupdate'
+                ];
+                return $this->respond($response, 200);
+            } else {
+                $response = [
+                    'status' => 'error',
+                    'message' => 'Gagal mengupdate cataloguer'
+                ];
+                return $this->respond($response, 400);
+            }
+        } catch (\Exception $e) {
+            $response = [
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ];
+            return $this->respond($response, 500);
+        }
     }
 }
