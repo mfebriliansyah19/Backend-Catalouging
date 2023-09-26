@@ -8,9 +8,6 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
-use CodeIgniter\Filters\FilterInterface;
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
 
 class Filters extends BaseConfig
 {
@@ -70,25 +67,4 @@ class Filters extends BaseConfig
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
     public array $filters = [];
-
-    public function cors(RequestInterface $request, ResponseInterface $response, $arguments = null)
-    {
-        $corsConfig = new \Config\Cors();
-
-        // Set header CORS
-        $response->setHeader('Access-Control-Allow-Origin', implode(', ', $corsConfig->allowOrigin));
-        $response->setHeader('Access-Control-Allow-Methods', implode(', ', $corsConfig->allowMethods));
-        $response->setHeader('Access-Control-Allow-Headers', implode(', ', $corsConfig->allowHeaders));
-        $response->setHeader('Access-Control-Max-Age', $corsConfig->maxAge);
-
-        // Tambahkan header lainnya jika diperlukan
-        foreach ($corsConfig->exposeHeaders as $header) {
-            $response->setHeader('Access-Control-Expose-Headers', $header);
-        }
-
-        // Jika metode OPTIONS, kirimkan tanggapan langsung
-        if ($request->getMethod(true) === 'OPTIONS') {
-            return $response;
-        }
-    }
 }

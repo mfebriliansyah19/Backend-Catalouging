@@ -1,0 +1,384 @@
+ERROR - 2023-09-26 06:15:16 --> mysqli_sql_exception: Table 'cataloguing_tool.attribute' doesn't exist in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `materia...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materia...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materia...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `materia...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(19): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(20): App\Models\Material->getCustomMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:15:16 --> Table 'cataloguing_tool.attribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `material`.`material_number`, `material`.`part_number`, `material`.`raw_data`, `material`.`result`, `material`.`inc`, `material`.`mfr`, `material`.`group_code`, `material`.`where_used`, `material`.`cat`, `material`.`status`, `material`.`link`, `m_inc`.`inc_name`, `attribute`.`attribute_code`, `attribute`.`attribute_name`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `attribute` ON `material`.`inc` = `attribute`.`inc`
+ORDER BY `material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(20): App\Models\Material->getCustomMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:16:09 --> mysqli_sql_exception: Table 'cataloguing_tool.attribute' doesn't exist in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `materia...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materia...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materia...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `materia...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(19): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(20): App\Models\Material->getCustomMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:16:09 --> Table 'cataloguing_tool.attribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `material`.`material_number`, `material`.`part_number`, `material`.`raw_data`, `material`.`result`, `material`.`inc`, `material`.`mfr`, `material`.`group_code`, `material`.`where_used`, `material`.`cat`, `material`.`status`, `material`.`link`, `m_inc`.`inc_name`, `d_attribute`.`attribute_code`, `d_attribute`.`attribute_name`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `attribute` ON `material`.`inc` = `d_attribute`.`inc`
+ORDER BY `material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(20): App\Models\Material->getCustomMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:16:37 --> mysqli_sql_exception: Unknown column 'material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `materia...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `materia...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `materia...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `materia...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(19): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(20): App\Models\Material->getCustomMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:16:37 --> Unknown column 'material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `material`.`material_number`, `material`.`part_number`, `material`.`raw_data`, `material`.`result`, `material`.`inc`, `material`.`mfr`, `material`.`group_code`, `material`.`where_used`, `material`.`cat`, `material`.`status`, `material`.`link`, `m_inc`.`inc_name`, `d_attribute`.`attribute_code`, `d_attribute`.`attribute_name`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `material`.`inc` = `d_attribute`.`inc`
+ORDER BY `material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(20): App\Models\Material->getCustomMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:34:45 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:34:45 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:38:16 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:38:16 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:41:32 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:41:32 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:41:34 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:41:34 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:43:17 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:43:17 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:43:27 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:43:27 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:43:32 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:43:32 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:43:55 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:43:55 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 06:47:48 --> mysqli_sql_exception: Unknown column 'DISTINCT d_material.material_number' in 'field list' in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `DISTINC...', 0)
+#1 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DISTINC...')
+#2 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DISTINC...')
+#3 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINC...', Array, false)
+#4 E:\a.Kerja\intern-app\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\a.Kerja\intern-app\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\a.Kerja\intern-app\Backend-Catalouging\app\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+#7 E:\a.Kerja\intern-app\Backend-Catalouging\app\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+#8 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+#9 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+#10 E:\a.Kerja\intern-app\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\a.Kerja\intern-app\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 E:\a.Kerja\intern-app\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\inte...')
+#13 {main}
+CRITICAL - 2023-09-26 06:47:48 --> Unknown column 'DISTINCT d_material.material_number' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `DISTINCT d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `d_material`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Material.php(20): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\MaterialController.php(23): App\Models\Material->getAllMaterialData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
