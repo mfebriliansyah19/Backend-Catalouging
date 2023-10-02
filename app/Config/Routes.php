@@ -1,7 +1,7 @@
 <?php
 
 use App\Controllers\MaterialController;
-use App\Controllers\IncController;
+// use App\Controllers\IncController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -10,6 +10,10 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
 $routes->get('inc', 'IncController::index');
+$routes->get('attribute', 'attributeController::index');
+$routes->get('globalattribute', 'globalattributeController::index');
 $routes->post('inc', 'IncController::create');
-$routes->patch('material/updateCat/(:num)', 'MaterialController::updateCat/$1');
+$routes->post('attribute', 'attributeController::create');
+$routes->post('globalattribute', 'globalattributeController::create');
 $routes->post('group', 'GroupController::create');
+$routes->patch('material/updateCat/(:num)', 'MaterialController::updateCat/$1');

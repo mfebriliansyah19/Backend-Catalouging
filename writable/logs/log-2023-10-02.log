@@ -1,0 +1,293 @@
+CRITICAL - 2023-10-02 04:15:41 --> Call to undefined method App\Models\Attribute::getAllAttributeData
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\AttributeController.php(25): CodeIgniter\Model->__call('getAllAttributeData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:16:35 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:16:35 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`atrribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:19:06 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:19:06 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`atrribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+LEFT JOIN `m_inc` ON `d_atrribute`.`inc` = `m_inc`.`inc`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:24:57 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:24:57 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`atrribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+LEFT JOIN `m_inc` ON `d_atrribute`.`inc` = `m_inc`.`inc`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:25:54 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:25:54 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+LEFT JOIN `m_inc` ON `d_atrribute`.`inc` = `m_inc`.`inc`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:26:34 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:26:34 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+LEFT JOIN `m_inc` ON `d_atrribute`.`inc` = `m_inc`.`inc`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:26:40 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:26:40 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+LEFT JOIN `m_inc` ON `d_atrribute`.`inc` = `m_inc`.`inc`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:27:59 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:27:59 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:28:30 --> mysqli_sql_exception: Table 'cataloguing_tool.d_atrribute' doesn't exist in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:28:30 --> Table 'cataloguing_tool.d_atrribute' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_atrribute`
+LEFT JOIN `m_inc` ON `d_atrribute`.`inc` = `m_inc`.`inc`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-02 04:29:52 --> mysqli_sql_exception: Unknown column 'd_atrribute.inc' in 'on clause' in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_attri...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_attri...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_attri...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attri...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-02 04:29:52 --> Unknown column 'd_atrribute.inc' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_attribute`.`inc` AS `inc`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`, `d_attribute`.`attribute_value` AS `attributeValue`
+FROM `d_attribute`
+LEFT JOIN `m_inc` ON `d_atrribute`.`inc` = `m_inc`.`inc`
+ORDER BY `d_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Attribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\AttributeController.php(25): App\Models\Attribute->getAllAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-02 05:14:39 --> Undefined variable $data
+in APPPATH\Controllers\IncController.php on line 86.
+ 1 APPPATH\Controllers\IncController.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 86)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

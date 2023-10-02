@@ -3,11 +3,12 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\Inc;
+use App\Models\Attribute;
 
-class IncController extends ResourceController
+class AttributeController extends ResourceController
 {
-        protected $modelName = 'App\Models\Inc';
+        protected $modelName = 'App\Models\Attribute
+    ';
 
     /**
      * Return an array of resource objects, themselves in array format
@@ -19,21 +20,22 @@ class IncController extends ResourceController
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST');
         header("Access-Control-Allow-Headers: X-Requested-With");
-        $model = new Inc();
-        $incData = $model->getAllIncData();
+        $model = new Attribute
+    ();
+        $AttributeData = $model->getAllAttributeData();
         // return $this->respond($data,200);
 
-        if(!empty($incData)){
+        if(!empty($AttributeData)){
             $response = [
                 'status' => 'success',
-                'message' => 'Data INC Berhasil Ditemukan',
-                'data' => $incData
+                'message' => 'Data Attribute Berhasil Ditemukan',
+                'data' => $AttributeData
             ];
             return $this->respond($response,200);
         } else {
             $response = [
                 'status' => 'error',
-                'message' => 'Data INC Tidak Ditemukan!!',
+                'message' => 'Data Attribute Tidak Ditemukan!!',
                 'data' => []
             ];
             return $this->respond($response, 404);
@@ -59,8 +61,8 @@ class IncController extends ResourceController
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'INC' => 'required',
-            'INC_NAME' => 'required'
+            'Attribute' => 'required',
+            'Attribute_Name' => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -68,19 +70,20 @@ class IncController extends ResourceController
                 'status'   => 400,
                 'error'    => $validation->getErrors(),
                 'messages' => [
-                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
                 ]
             ];
             return $this->respond($response, 400);
         }
 
-        $INC = $this->request->getVar('INC');
-        $INC_NAME = $this->request->getVar('INC_Name');
+        $Attribute = $this->request->getVar('Attribute');
+        $INCName = $this->request->getVar('Attribute_Name');
 
-        $model = new Inc();
+        $model = new Attribute
+    ();
         $data = [
-            'INC' => $INC,
-            'INC_Name' => $INC_NAME,
+            'inc' => $Attribute,
+            'Attribute_Name' => $INCName,
         ];
 
         $model->insert($data);
