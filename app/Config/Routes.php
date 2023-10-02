@@ -9,3 +9,4 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
 $routes->patch('material/updateCat/(:num)', 'MaterialController::updateCat/$1');
+$routes->post('group/create', 'GroupController::create');
