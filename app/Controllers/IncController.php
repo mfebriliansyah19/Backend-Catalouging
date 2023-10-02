@@ -75,12 +75,12 @@ class IncController extends ResourceController
         }
 
         $INC = $this->request->getVar('INC');
-        $INC_NAME = $this->request->getVar('INC_Name');
+        $INC_NAME = $this->request->getVar('INC_NAME');
 
         $model = new Inc();
         $data = [
             'INC' => $INC,
-            'INC_Name' => $INC_NAME,
+            'INC_NAME' => $INC_NAME,
         ];
 
         $model->insert($data);
