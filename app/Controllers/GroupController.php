@@ -14,6 +14,32 @@ class GroupController extends ResourceController
      *
      * @return mixed
      */
+    public function index()
+    {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST');
+        header("Access-Control-Allow-Headers: X-Requested-With");
+        $model = new GroupModel();
+        $groupData = $model->getAllGroupData();
+        // return $this->respond($data,200);
+
+        if(!empty($groupData)){
+            $response = [
+                'status' => 'success',
+                'message' => 'Data Group Berhasil Ditemukan',
+                'data' => $groupData
+            ];
+            return $this->respond($response,200);
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Data Group Tidak Ditemukan!!',
+                'data' => []
+            ];
+            return $this->respond($response, 404);
+        }
+    }
+
     public function create()
     {
         $validation = \Config\Services::validation();

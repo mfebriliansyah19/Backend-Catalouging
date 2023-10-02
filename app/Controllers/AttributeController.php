@@ -61,8 +61,10 @@ class AttributeController extends ResourceController
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'Attribute' => 'required',
-            'Attribute_Name' => 'required'
+            'INC'                => 'required',
+            'attribute_code'     => 'required',
+            'attribute_name'     => 'required',
+            'attribute_value'    => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -70,20 +72,24 @@ class AttributeController extends ResourceController
                 'status'   => 400,
                 'error'    => $validation->getErrors(),
                 'messages' => [
-                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
                 ]
             ];
             return $this->respond($response, 400);
         }
 
-        $Attribute = $this->request->getVar('Attribute');
-        $INCName = $this->request->getVar('Attribute_Name');
+        $INC                = $this->request->getVar('INC');
+        $attribute_code     = $this->request->getVar('attribute_code');
+        $attribute_name     = $this->request->getVar('attribute_name');
+        $attribute_value    = $this->request->getVar('attribute_value');
 
-        $model = new Attribute
-    ();
+        $model = new Attribute();
+
         $data = [
-            'inc' => $Attribute,
-            'Attribute_Name' => $INCName,
+            'INC'               => $INC,
+            'attribute_code'    => $attribute_code,
+            'attribute_name'    => $attribute_name,
+            'attribute_value'   => $attribute_value,
         ];
 
         $model->insert($data);
@@ -91,7 +97,7 @@ class AttributeController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-                'success' => 'Data produk berhasil ditambahkan.'
+            'success' => 'Data produk berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);

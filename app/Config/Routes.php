@@ -11,6 +11,7 @@ $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
 $routes->get('inc', 'IncController::index');
 $routes->get('attribute', 'attributeController::index');
+$routes->get('group', 'groupController::index');
 $routes->get('globalattribute', 'globalattributeController::index');
 $routes->post('inc', 'IncController::create');
 $routes->post('attribute', 'attributeController::create');
