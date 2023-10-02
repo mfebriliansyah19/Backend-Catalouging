@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use CodeIgniter\API\ResponseTrait;
 use App\Models\GroupModel;
 
 class GroupController extends ResourceController
@@ -11,13 +10,12 @@ class GroupController extends ResourceController
     protected $modelName = 'App\Models\GroupModel';
 
     /**
-     * Return an array of resource objects, themselves in array format
+     * Create a new group.
      *
      * @return mixed
      */
     public function create()
     {
-        // Validasi data yang diterima dari permintaan POST
         $validation = \Config\Services::validation();
         $validation->setRules([
             'group_code' => 'required',
@@ -25,24 +23,33 @@ class GroupController extends ResourceController
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
-            return $this->fail($validation->getErrors());
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
         }
 
-        // Ambil data dari permintaan POST
-        $groupCode = $this->request->getPost('group_code');
-        $groupName = $this->request->getPost('group_name');
+        $groupCode = $this->request->getVar('group_code');
+        $groupName = $this->request->getVar('group_name');
 
-        // Simpan data ke dalam tabel "group"
         $model = new GroupModel();
         $data = [
             'group_code' => $groupCode,
-            'group_name' => $groupName
+            'group_name' => $groupName,
         ];
 
-        if ($model->insert($data)) {
-            return $this->respondCreated(['message' => 'Data grup berhasil ditambahkan']);
-        } else {
-            return $this->fail('Gagal menambahkan data grup');
-        }
+        $model->insert($data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data produk berhasil ditambahkan.'
+            ]
+        ];
+        return $this->respondCreated($response);
     }
 }
