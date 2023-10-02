@@ -21,7 +21,6 @@ class MaterialController extends ResourceController
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new Material();
         $materialData = $model->getAllMaterialData();
-        // return $this->respond($data, 200);
 
         if (!empty($materialData)) {
             $response = [
