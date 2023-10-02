@@ -26,14 +26,14 @@ class IncController extends ResourceController
         if(!empty($incData)){
             $response = [
                 'status' => 'success',
-                'message' => 'Data Inc Berhasil Ditemukan',
+                'message' => 'Data INC Berhasil Ditemukan',
                 'data' => $incData
             ];
             return $this->respond($response,200);
         } else {
             $response = [
                 'status' => 'error',
-                'message' => 'Data Inc Tidak Ditemukan!!',
+                'message' => 'Data INC Tidak Ditemukan!!',
                 'data' => []
             ];
             return $this->respond($response, 404);
@@ -51,23 +51,35 @@ class IncController extends ResourceController
     }
 
     /**
-     * Return a new resource object, with default properties
-     *
-     * @return mixed
-     */
-    public function new()
-    {
-        //
-    }
-
-    /**
      * Create a new resource object, from "posted" parameters
      *
      * @return mixed
      */
     public function create()
     {
-        //
+        // $rules = $this->validate([
+        //     'INC'       => 'required',
+        //     'INC_Name'  => 'required',
+        // ]);
+
+        // if (!$rules) {
+        //     $response = [
+        //         'message' =>$this->validator->getErrors()
+        //     ];
+
+        //     return $this->failValidationError($response);
+        // }
+
+        $this->model->insert([
+            'INC'       => esc($this->request->getVar('INC')),
+            'INC_Name'  => esc($this->request->getVar('INC Name')),
+        ]);
+        $response=[
+            'response' => 'Data INC Berhasil ditambahkan'
+        ];
+
+        return $this -> respondCreated($response);
+        
     }
 
     /**

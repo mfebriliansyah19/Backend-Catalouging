@@ -10,4 +10,5 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
 $routes->get('inc', 'IncController::index');
+$routes->post('inc', 'IncController::create');
 $routes->patch('material/updateCat/(:num)', 'MaterialController::updateCat/$1');
