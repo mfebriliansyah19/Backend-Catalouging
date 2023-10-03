@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\Attribute;
+use App\Models\GlobalAttribute;
 
 class GlobalAttributeController extends ResourceController
 {
@@ -20,7 +20,7 @@ class GlobalAttributeController extends ResourceController
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST');
         header("Access-Control-Allow-Headers: X-Requested-With");
-        $model = new Attribute
+        $model = new GlobalAttribute
     ();
         $GlobalAttributeData = $model->getAllGLobalAttributeData();
         // return $this->respond($data,200);
@@ -28,14 +28,14 @@ class GlobalAttributeController extends ResourceController
         if(!empty($GlobalAttributeData)){
             $response = [
                 'status' => 'success',
-                'message' => 'Data Attribute Berhasil Ditemukan',
-                'data' => $AttributeData
+                'message' => 'Data Global Attribute Berhasil Ditemukan',
+                'data' => $GlobalAttributeData
             ];
             return $this->respond($response,200);
         } else {
             $response = [
                 'status' => 'error',
-                'message' => 'Data Attribute Tidak Ditemukan!!',
+                'message' => 'Data Global Attribute Tidak Ditemukan!!',
                 'data' => []
             ];
             return $this->respond($response, 404);
@@ -61,8 +61,10 @@ class GlobalAttributeController extends ResourceController
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'Attribute' => 'required',
-            'Attribute_Name' => 'required'
+            'attribute_code' => 'required',
+            'attribute_name' => 'required',
+            'created_at'     => 'required',
+            'updated_at'     => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -70,20 +72,24 @@ class GlobalAttributeController extends ResourceController
                 'status'   => 400,
                 'error'    => $validation->getErrors(),
                 'messages' => [
-                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
                 ]
             ];
             return $this->respond($response, 400);
         }
 
-        $Attribute = $this->request->getVar('Attribute');
-        $INCName = $this->request->getVar('Attribute_Name');
+        $attribute_code = $this->request->getVar('attribute_code');
+        $attribute_name = $this->request->getVar('attribute_name');
+        $created_at     = $this->request->getVar('created_at');
+        $updated_at     = $this->request->getVar('update_at');
 
-        $model = new Attribute
+        $model = new GlobalAttribute
     ();
         $data = [
-            'inc' => $Attribute,
-            'Attribute_Name' => $INCName,
+            'attribute_code' => $attribute_code,
+            'attribute_name' => $attribute_name,
+            'created_at'     => $created_at,
+            'updated_at'      => $updated_at,
         ];
 
         $model->insert($data);
@@ -91,7 +97,7 @@ class GlobalAttributeController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-                'success' => 'Data produk berhasil ditambahkan.'
+            'success' => 'Data produk berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);

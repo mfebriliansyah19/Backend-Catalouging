@@ -86,7 +86,7 @@ class AttributeController extends ResourceController
         $model = new Attribute();
 
         $data = [
-            'INC'               => $INC,
+            'inc'               => $INC,
             'attribute_code'    => $attribute_code,
             'attribute_name'    => $attribute_name,
             'attribute_value'   => $attribute_value,
