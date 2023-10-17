@@ -17,7 +17,7 @@ class GroupController extends ResourceController
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
+        header('Access-Control-Allow-Methods: GET, POST, DELETE');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new GroupModel();
         $groupData = $model->getAllGroupData();
@@ -73,9 +73,20 @@ class GroupController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-                'success' => 'Data produk berhasil ditambahkan.'
+                'success' => 'Data Group berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);
+    }
+
+    public function delete($id = null)
+    {
+        $this->model->delete($id);
+
+        $response = [
+            'success' => 'Data Group berhasil dihapus.'
+        ];
+
+        return $this->respondDeleted($response);
     }
 }

@@ -3,12 +3,11 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\GlobalAttribute;
+use App\Models\User;
 
-class GlobalAttributeController extends ResourceController
+class UserController extends ResourceController
 {
-        protected $modelName = 'App\Models\GlobalAttribute
-    ';
+        protected $modelName = 'App\Models\User';
 
     /**
      * Return an array of resource objects, themselves in array format
@@ -20,22 +19,21 @@ class GlobalAttributeController extends ResourceController
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST');
         header("Access-Control-Allow-Headers: X-Requested-With");
-        $model = new GlobalAttribute
-    ();
-        $GlobalAttributeData = $model->getAllGLobalAttributeData();
+        $model = new User();
+        $userData = $model->getAllUserData();
         // return $this->respond($data,200);
 
-        if(!empty($GlobalAttributeData)){
+        if(!empty($userData)){
             $response = [
                 'status' => 'success',
-                'message' => 'Data Global Attribute Berhasil Ditemukan',
-                'data' => $GlobalAttributeData
+                'message' => 'Data User Berhasil Ditemukan',
+                'data' => $userData
             ];
             return $this->respond($response,200);
         } else {
             $response = [
                 'status' => 'error',
-                'message' => 'Data Global Attribute Tidak Ditemukan!!',
+                'message' => 'Data User Tidak Ditemukan!!',
                 'data' => []
             ];
             return $this->respond($response, 404);
@@ -61,10 +59,9 @@ class GlobalAttributeController extends ResourceController
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
-            'attribute_code' => 'required',
-            'attribute_name' => 'required',
-            'created_at'     => 'required',
-            'updated_at'     => 'required'
+            'name'      => 'required',
+            'password'  => 'required',
+            'role_id'   => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -72,24 +69,21 @@ class GlobalAttributeController extends ResourceController
                 'status'   => 400,
                 'error'    => $validation->getErrors(),
                 'messages' => [
-                'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
                 ]
             ];
             return $this->respond($response, 400);
         }
 
-        $attribute_code = $this->request->getVar('attribute_code');
-        $attribute_name = $this->request->getVar('attribute_name');
-        $created_at     = $this->request->getVar('created_at');
-        $updated_at     = $this->request->getVar('update_at');
+        $name = $this->request->getVar('name');
+        $password = $this->request->getVar('password');
+        $role_id = $this->request->getVar('role_id');
 
-        $model = new GlobalAttribute
-    ();
+        $model = new User();
         $data = [
-            'attribute_code' => $attribute_code,
-            'attribute_name' => $attribute_name,
-            'created_at'     => $created_at,
-            'updated_at'      => $updated_at,
+            'name'      => $name,
+            'password'  => $password,
+            'role_id'   => $role_id,
         ];
 
         $model->insert($data);
@@ -97,7 +91,7 @@ class GlobalAttributeController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-            'success' => 'Data Global Attribute berhasil ditambahkan.'
+                'success' => 'Data produk berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);
@@ -133,7 +127,7 @@ class GlobalAttributeController extends ResourceController
         $this->model->delete($id);
 
         $response = [
-            'success' => 'Data Global Attribute berhasil dihapus.'
+            'success' => 'Data User berhasil dihapus.'
         ];
 
         return $this->respondDeleted($response);

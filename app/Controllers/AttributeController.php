@@ -18,7 +18,7 @@ class AttributeController extends ResourceController
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
+        header('Access-Control-Allow-Methods: GET, POST, DELETE');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new Attribute
     ();
@@ -97,7 +97,7 @@ class AttributeController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-            'success' => 'Data produk berhasil ditambahkan.'
+            'success' => 'Data Attribute berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);
@@ -130,6 +130,12 @@ class AttributeController extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $this->model->delete($id);
+
+        $response = [
+            'success' => 'Data Attribute berhasil dihapus.'
+        ];
+
+        return $this->respondDeleted($response);
     }
 }

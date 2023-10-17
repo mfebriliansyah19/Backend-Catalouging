@@ -66,4 +66,15 @@ class MaterialController extends ResourceController
             return $this->respond($response, 500);
         }
     }
+
+    public function delete($id = null)
+    {
+        $this->model->delete($id);
+
+        $response = [
+            'success' => 'Data Material berhasil dihapus.'
+        ];
+
+        return $this->respondDeleted($response);
+    }
 }

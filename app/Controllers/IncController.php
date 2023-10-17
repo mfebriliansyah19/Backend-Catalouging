@@ -17,7 +17,7 @@ class IncController extends ResourceController
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
+        header('Access-Control-Allow-Methods: GET, POST, DELETE');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new Inc();
         $incData = $model->getAllIncData();
@@ -121,6 +121,12 @@ class IncController extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $this->model->delete($id);
+
+        $response = [
+            'success' => 'Data INC berhasil dihapus.'
+        ];
+
+        return $this->respondDeleted($response);
     }
 }
