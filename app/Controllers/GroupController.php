@@ -79,6 +79,45 @@ class GroupController extends ResourceController
         return $this->respondCreated($response);
     }
 
+    public function update()
+    {
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'group_code' => 'required',
+            'group_name' => 'required'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
+
+        $groupCode = $this->request->getVar('group_code');
+        $groupName = $this->request->getVar('group_name');
+
+        $model = new GroupModel();
+        $data = [
+            'group_code' => $groupCode,
+            'group_name' => $groupName,
+        ];
+
+        $model->update($id, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Group berhasil diubah.'
+            ]
+        ];
+        return $this->respond($response,200);
+    }
+
     public function delete($id = null)
     {
         $this->model->delete($id);

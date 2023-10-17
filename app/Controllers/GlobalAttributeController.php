@@ -18,7 +18,7 @@ class GlobalAttributeController extends ResourceController
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
+        header('Access-Control-Allow-Methods: GET, POST, DELETE');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new GlobalAttribute
     ();
@@ -120,7 +120,48 @@ class GlobalAttributeController extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'attribute_code' => 'required',
+            'attribute_name' => 'required',
+            'created_at'     => 'required',
+            'updated_at'     => 'required'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
+
+        $attribute_code = $this->request->getVar('attribute_code');
+        $attribute_name = $this->request->getVar('attribute_name');
+        $created_at     = $this->request->getVar('created_at');
+        $updated_at     = $this->request->getVar('update_at');
+
+        $model = new GlobalAttribute
+    ();
+        $data = [
+            'attribute_code' => $attribute_code,
+            'attribute_name' => $attribute_name,
+            'created_at'     => $created_at,
+            'updated_at'      => $updated_at,
+        ];
+
+        $model->update($id, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+            'success' => 'Data Global Attribute berhasil diubah.'
+            ]
+        ];
+        return $this->respond($response, 200);
     }
 
     /**

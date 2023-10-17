@@ -120,14 +120,50 @@ class AttributeController extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'INC'                => 'required',
+            'attribute_code'     => 'required',
+            'attribute_name'     => 'required',
+            'attribute_value'    => 'required'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
+
+        $INC                = $this->request->getVar('INC');
+        $attribute_code     = $this->request->getVar('attribute_code');
+        $attribute_name     = $this->request->getVar('attribute_name');
+        $attribute_value    = $this->request->getVar('attribute_value');
+
+        $model = new Attribute();
+
+        $data = [
+            'inc'               => $INC,
+            'attribute_code'    => $attribute_code,
+            'attribute_name'    => $attribute_name,
+            'attribute_value'   => $attribute_value,
+        ];
+
+        $model->update($id, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+            'success' => 'Data Attribute berhasil diubah.'
+            ]
+        ];
+        return $this->respond($response, 200);
     }
 
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
     public function delete($id = null)
     {
         $this->model->delete($id);

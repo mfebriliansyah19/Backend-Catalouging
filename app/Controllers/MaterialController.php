@@ -17,7 +17,7 @@ class MaterialController extends ResourceController
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
+        header('Access-Control-Allow-Methods: GET, POST, DELETE');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new Material();
         $materialData = $model->getAllMaterialData();

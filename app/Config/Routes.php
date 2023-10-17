@@ -11,8 +11,8 @@ $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
 $routes->get('inc', 'IncController::index');
 $routes->get('attribute', 'attributeController::index');
-$routes->get('group', 'groupController::index');
 $routes->get('globalattribute', 'globalattributeController::index');
+$routes->get('group', 'groupController::index');
 $routes->get('user', 'userController::index');
 
 $routes->post('inc', 'IncController::create');
@@ -20,6 +20,13 @@ $routes->post('attribute', 'attributeController::create');
 $routes->post('globalattribute', 'globalattributeController::create');
 $routes->post('group', 'GroupController::create');
 $routes->post('user', 'userController::create');
+
+$routes->put('material/(:num)', 'MaterialController::update/$1');
+$routes->put('inc/(:num)', 'IncController::update/$1');
+$routes->put('attribute/(:num)', 'attributeController::update/$1');
+$routes->put('globalattribute/(:num)', 'globalattributeController::update/$1');
+$routes->put('group/(:num)', 'groupController::update/$1');
+$routes->put('user/(:num)', 'userController::update/$1');
 
 $routes->delete('material/(:num)', 'MaterialController::delete/$1');
 $routes->delete('inc/(:num)', 'IncController::delete/$1');

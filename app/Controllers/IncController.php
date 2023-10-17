@@ -88,7 +88,7 @@ class IncController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-                'success' => 'Data produk berhasil ditambahkan.'
+                'success' => 'Data INC berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);
@@ -111,7 +111,41 @@ class IncController extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'INC'       => 'required',
+            'INC_NAME'  => 'required'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
+
+        $INC = $this->request->getVar('INC');
+        $INC_NAME = $this->request->getVar('INC_NAME');
+
+        $model = new Inc();
+        $data = [
+            'INC' => $INC,
+            'INC_NAME' => $INC_NAME,
+        ];
+
+        $model->update($id, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data INC berhasil diubah.'
+            ]
+        ];
+        return $this->respond($response, 200);
     }
 
     /**

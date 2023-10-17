@@ -91,7 +91,7 @@ class UserController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-                'success' => 'Data produk berhasil ditambahkan.'
+                'success' => 'Data User berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);
@@ -114,7 +114,44 @@ class UserController extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'name'      => 'required',
+            'password'  => 'required',
+            'role_id'   => 'required'
+        ]);
+
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
+
+        $name = $this->request->getVar('name');
+        $password = $this->request->getVar('password');
+        $role_id = $this->request->getVar('role_id');
+
+        $model = new User();
+        $data = [
+            'name'      => $name,
+            'password'  => $password,
+            'role_id'   => $role_id,
+        ];
+
+        $model->update($id, $data);
+        $response = [
+            'status'   => 201,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data User berhasil diubah.'
+            ]
+        ];
+        return $this->respond($response, 200);
     }
 
     /**
