@@ -20,8 +20,7 @@ class AttributeController extends ResourceController
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, DELETE');
         header("Access-Control-Allow-Headers: X-Requested-With");
-        $model = new Attribute
-    ();
+        $model = new Attribute();
         $AttributeData = $model->getAllAttributeData();
         // return $this->respond($data,200);
 
@@ -167,6 +166,8 @@ class AttributeController extends ResourceController
     public function delete($id = null)
     {
         $this->model->delete($id);
+        // $model = new Attribute();
+        // $model->delete($id);
 
         $response = [
             'success' => 'Data Attribute berhasil dihapus.'

@@ -10,6 +10,9 @@ class GlobalAttribute extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields    = ['inc','attribute_code','attribute_name','created_at','updated_at'];
+    protected $useTimestamps = true;
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
 
     public function getAllGlobalAttributeData() {
         return $this->select('d_global_attribute.attribute_code AS globalattributeCode, d_global_attribute.attribute_name AS globalattributeName, d_global_attribute.created_at AS globalCreated, d_global_attribute.updated_at AS globalUpdated')
@@ -20,27 +23,4 @@ class GlobalAttribute extends Model
                     // ->asArray()
                     ->findAll();
     }
-    // Dates
-    // protected $useTimestamps = true;
-    // protected $dateFormat    = 'datetime';
-    // protected $createdField  = 'created_at';
-    // protected $updatedField  = 'updated_at';
-    // protected $deletedField  = 'deleted_at';
-
-    // Validation
-    // protected $validationRules      = [];
-    // protected $validationMessages   = [];
-    // protected $skipValidation       = false;
-    // protected $cleanValidationRules = true;
-
-    // Callbacks
-    // protected $allowCallbacks = true;
-    // protected $beforeInsert   = [];
-    // protected $afterInsert    = [];
-    // protected $beforeUpdate   = [];
-    // protected $afterUpdate    = [];
-    // protected $beforeFind     = [];
-    // protected $afterFind      = [];
-    // protected $beforeDelete   = [];
-    // protected $afterDelete    = [];
 }

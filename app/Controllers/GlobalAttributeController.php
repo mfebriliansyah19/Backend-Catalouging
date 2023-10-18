@@ -7,8 +7,8 @@ use App\Models\GlobalAttribute;
 
 class GlobalAttributeController extends ResourceController
 {
-        protected $modelName = 'App\Models\GlobalAttribute
-    ';
+        protected $modelName = 'App\Models\GlobalAttribute';
+
 
     /**
      * Return an array of resource objects, themselves in array format
@@ -20,8 +20,8 @@ class GlobalAttributeController extends ResourceController
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Methods: GET, POST, DELETE');
         header("Access-Control-Allow-Headers: X-Requested-With");
-        $model = new GlobalAttribute
-    ();
+        
+        $model = new GlobalAttribute();
         $GlobalAttributeData = $model->getAllGLobalAttributeData();
         // return $this->respond($data,200);
 
@@ -63,8 +63,6 @@ class GlobalAttributeController extends ResourceController
         $validation->setRules([
             'attribute_code' => 'required',
             'attribute_name' => 'required',
-            'created_at'     => 'required',
-            'updated_at'     => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -80,16 +78,16 @@ class GlobalAttributeController extends ResourceController
 
         $attribute_code = $this->request->getVar('attribute_code');
         $attribute_name = $this->request->getVar('attribute_name');
-        $created_at     = $this->request->getVar('created_at');
-        $updated_at     = $this->request->getVar('update_at');
+        // $created_at     = $this->request->getVar('created_at');
+        // $updated_at     = $this->request->getVar('update_at');
 
-        $model = new GlobalAttribute
-    ();
+        $model = new GlobalAttribute();
+
         $data = [
             'attribute_code' => $attribute_code,
             'attribute_name' => $attribute_name,
-            'created_at'     => $created_at,
-            'updated_at'      => $updated_at,
+            // 'created_at'     => $created_at,
+            // 'updated_at'     => $updated_at,
         ];
 
         $model->insert($data);
@@ -97,7 +95,7 @@ class GlobalAttributeController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-            'success' => 'Data Global Attribute berhasil ditambahkan.'
+                'success' => 'Data Global Attribute berhasil ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);
@@ -124,8 +122,6 @@ class GlobalAttributeController extends ResourceController
         $validation->setRules([
             'attribute_code' => 'required',
             'attribute_name' => 'required',
-            'created_at'     => 'required',
-            'updated_at'     => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -141,16 +137,12 @@ class GlobalAttributeController extends ResourceController
 
         $attribute_code = $this->request->getVar('attribute_code');
         $attribute_name = $this->request->getVar('attribute_name');
-        $created_at     = $this->request->getVar('created_at');
-        $updated_at     = $this->request->getVar('update_at');
 
-        $model = new GlobalAttribute
-    ();
+        $model = new GlobalAttribute();
+
         $data = [
             'attribute_code' => $attribute_code,
-            'attribute_name' => $attribute_name,
-            'created_at'     => $created_at,
-            'updated_at'      => $updated_at,
+            'attribute_name' => $attribute_name
         ];
 
         $model->update($id, $data);
@@ -172,6 +164,8 @@ class GlobalAttributeController extends ResourceController
     public function delete($id = null)
     {
         $this->model->delete($id);
+        // $model = new GlobalAttribute();
+        // $model->delete($id);
 
         $response = [
             'success' => 'Data Global Attribute berhasil dihapus.'
