@@ -115,7 +115,7 @@ class GroupController extends ResourceController
                 'success' => 'Data Group berhasil diubah.'
             ]
         ];
-        return $this->respond($response,200);
+        return $this->respond($response, 200);
     }
 
     public function delete($id = null)

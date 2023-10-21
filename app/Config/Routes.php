@@ -35,4 +35,6 @@ $routes->delete('globalattribute/(:num)', 'globalattributeController::delete/$1'
 $routes->delete('group/(:num)', 'groupController::delete/$1');
 $routes->delete('user/(:num)', 'userController::delete/$1');
 
+$routes->add('Api/login', 'ApiController::login');
+
 $routes->patch('material/updateCat/(:num)', 'MaterialController::updateCat/$1');

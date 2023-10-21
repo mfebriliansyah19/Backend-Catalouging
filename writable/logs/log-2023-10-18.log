@@ -1,0 +1,14 @@
+CRITICAL - 2023-10-18 07:30:53 --> Call to a member function delete() on null
+in APPPATH\Controllers\AttributeController.php on line 168.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->delete('693')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-18 07:31:06 --> Call to a member function delete() on null
+in APPPATH\Controllers\AttributeController.php on line 168.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AttributeController->delete('693')
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AttributeController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

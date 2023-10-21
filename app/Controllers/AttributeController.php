@@ -165,9 +165,9 @@ class AttributeController extends ResourceController
 
     public function delete($id = null)
     {
-        $this->model->delete($id);
-        // $model = new Attribute();
-        // $model->delete($id);
+        // $this->model->delete($id);
+        $model = new Attribute();
+        $model->delete($id);
 
         $response = [
             'success' => 'Data Attribute berhasil dihapus.'
