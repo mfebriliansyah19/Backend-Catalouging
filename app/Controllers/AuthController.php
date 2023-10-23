@@ -12,6 +12,9 @@ class AuthController extends ResourceController
 
     public function login()
     {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST');
+        header("Access-Control-Allow-Headers: X-Requested-With");
         // Validasi data masukan
         $validation = \Config\Services::validation();
         $validation->setRules([
