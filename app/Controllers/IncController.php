@@ -50,48 +50,71 @@ class IncController extends ResourceController
         //
     }
 
-    /**
-     * Create a new resource object, from "posted" parameters
-     *
-     * @return mixed
-     */
     public function create()
     {
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'INC'       => 'required',
-            'INC_NAME'  => 'required'
+    //     $requestData = $this->request->getJSON();
+    //     $validation = \Config\Services::validation();
+    //     $validation->setRules([
+    //         'INC'       => 'required',
+    //         'INC_NAME'  => 'required'
+    //     ]);
+
+    //     if (!$validation->withRequest($this->request)->run()) {
+    //         $response = [
+    //             'status'   => 400,
+    //             'error'    => $validation->getErrors(),
+    //             'messages' => [
+    //             'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+    //             ]
+    //         ];
+    //         return $this->respond($response, 400);
+    //     }
+
+    //     $INC = $this->request->getVar('INC');
+    //     $INC_NAME = $this->request->getVar('INC_NAME');
+
+    //     $model = new Inc();
+
+    //    // Periksa apakah data sudah ada di dalam database
+    //    $existingData = $model->where('INC', $requestData->INC)->first();
+    //    $existingData = $model->where('INC_NAME', $requestData->INC_NAME)->first();
+
+    //    if ($existingData) {
+    //        // Jika data sudah ada, berikan respons bahwa data sudah ada
+    //        return $this->fail('Data already exists in the database.', 409); // 409: Conflict
+    //    } else {
+    //        // Jika data belum ada, tambahkan ke dalam database
+    //        $model->insert([
+    //            'INC' => $requestData->$INC,
+    //            'INC_NAME' => $requestData->$INC_NAME,
+    //            // Tambahkan field lain sesuai kebutuhan
+    //        ]);
+
+    //        // Berikan respons sukses jika data berhasil ditambahkan
+    //        return $this->respondCreated(['message' => 'Data added successfully']); // 201: Created
+    //    }
+ 
+    $requestData = $this->request->getJSON();
+
+    $model = new Inc();
+
+    $INC = 'INC'; 
+    $INC_NAME = 'INC_NAME'; 
+
+    $existingData = $model->where($INC, $requestData->$INC)->first();
+    $existingData = $model->where($INC_NAME, $requestData->$INC_NAME)->first();
+
+    if ($existingData) {
+        return $this->fail('Data dengan nama ini sudah ada di database.', 409); // 409: Conflict
+    } else {
+        $model->insert([
+            $INC => $requestData->$INC,
+            $INC_NAME => $requestData->$INC_NAME,
         ]);
 
-        if (!$validation->withRequest($this->request)->run()) {
-            $response = [
-                'status'   => 400,
-                'error'    => $validation->getErrors(),
-                'messages' => [
-                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-                ]
-            ];
-            return $this->respond($response, 400);
-        }
+        return $this->respondCreated(['message' => 'Data berhasil di tambahkan']); // 201: Created
+    }
 
-        $INC = $this->request->getVar('INC');
-        $INC_NAME = $this->request->getVar('INC_NAME');
-
-        $model = new Inc();
-        $data = [
-            'INC' => $INC,
-            'INC_NAME' => $INC_NAME,
-        ];
-
-        $model->insert($data);
-        $response = [
-            'status'   => 201,
-            'error'    => null,
-            'messages' => [
-                'success' => 'Data INC berhasil ditambahkan.'
-            ]
-        ];
-        return $this->respondCreated($response);
     }
 
     /**

@@ -42,44 +42,65 @@ class GroupController extends ResourceController
 
     public function create()
     {
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'group_code' => 'required',
-            'group_name' => 'required'
-        ]);
+        // $validation = \Config\Services::validation();
+        // $validation->setRules([
+        //     'group_code' => 'required',
+        //     'group_name' => 'required'
+        // ]);
 
-        if (!$validation->withRequest($this->request)->run()) {
-            $response = [
-                'status'   => 400,
-                'error'    => $validation->getErrors(),
-                'messages' => [
-                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-                ]
-            ];
-            return $this->respond($response, 400);
-        }
+        // if (!$validation->withRequest($this->request)->run()) {
+        //     $response = [
+        //         'status'   => 400,
+        //         'error'    => $validation->getErrors(),
+        //         'messages' => [
+        //             'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+        //         ]
+        //     ];
+        //     return $this->respond($response, 400);
+        // }
 
-        $groupCode = $this->request->getVar('group_code');
-        $groupName = $this->request->getVar('group_name');
+        // $groupCode = $this->request->getVar('group_code');
+        // $groupName = $this->request->getVar('group_name');
+
+        // $model = new GroupModel();
+        // $data = [
+        //     'group_code' => $groupCode,
+        //     'group_name' => $groupName,
+        // ];
+
+        // $model->insert($data);
+        // $response = [
+        //     'status'   => 201,
+        //     'error'    => null,
+        //     'messages' => [
+        //         'success' => 'Data Group berhasil ditambahkan.'
+        //     ]
+        // ];
+        // return $this->respondCreated($response);
+
+        $requestData = $this->request->getJSON();
 
         $model = new GroupModel();
-        $data = [
-            'group_code' => $groupCode,
-            'group_name' => $groupName,
-        ];
 
-        $model->insert($data);
-        $response = [
-            'status'   => 201,
-            'error'    => null,
-            'messages' => [
-                'success' => 'Data Group berhasil ditambahkan.'
-            ]
-        ];
-        return $this->respondCreated($response);
+        $groupCode = 'group_code'; 
+        $groupName = 'group_name'; 
+
+        $existingData = $model->where($groupCode, $requestData->$groupCode)->first();
+        $existingData = $model->where($groupName, $requestData->$groupName)->first();
+
+        if ($existingData) {
+            return $this->fail('Data Dengan Nama ini sudah ada di database.', 409);
+        } else {
+            $model->insert([
+                $groupCode => $requestData->$groupCode,
+                $groupName => $requestData->$groupName,
+            ]);
+
+            return $this->respondCreated(['message' => 'Data Berhasil Ditambahkan']);
+        }
     }
 
-    public function update()
+    public function update($id = null)
     {
         $validation = \Config\Services::validation();
         $validation->setRules([
