@@ -96,33 +96,25 @@ class UserController extends ResourceController
         // ];
         // return $this->respondCreated($response);
 
-        // Ambil data yang dikirim dari request
         $requestData = $this->request->getJSON();
 
-        // Misalnya, kita punya model untuk mengakses database
         $model = new User();
         
-        // Field yang ingin dicek tidak boleh sama
-        $name = 'name'; // Ganti dengan nama field yang ingin dicek
-        $password = 'password'; // Ganti dengan nama field yang ingin dicek
-        $role_id = 'role_id'; // Ganti dengan nama field yang ingin dicek
+        $name = 'name'; 
+        $password = 'password'; 
+        $role_id = 'role_id'; 
 
-        // Periksa apakah data sudah ada di dalam database
         $existingData = $model->where($name, $requestData->$name)->first();
         
         if ($existingData) {
-            // Jika data sudah ada, berikan respons bahwa data sudah ada
-            return $this->fail('Data dengan nama ini sudah ada di database.', 409); // 409: Conflict
+            return $this->fail('Data dengan nama ini sudah ada di database.', 409); 
         } else {
-            // Jika data belum ada, tambahkan ke dalam database
             $model->insert([
                 $name => $requestData->$name,
                 $password => $requestData->$password,
                 $role_id => $requestData->$role_id,
-        // Tambahkan field lain sesuai kebutuhan
             ]);
 
-        // Berikan respons sukses jika data berhasil ditambahkan
             return $this->respondCreated(['message' => 'Data berhasil ditambahkan']); // 201: Created
         }
     }
