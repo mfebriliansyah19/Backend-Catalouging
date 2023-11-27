@@ -1,0 +1,42 @@
+CRITICAL - 2023-11-27 09:05:03 --> Call to a member function isValid() on null
+in APPPATH\Controllers\MaterialController.php on line 234.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->bulkInsertFromExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-27 09:07:03 --> Call to a member function isValid() on null
+in APPPATH\Controllers\MaterialController.php on line 234.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->bulkInsertFromExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-27 09:09:59 --> Call to a member function isValid() on null
+in APPPATH\Controllers\MaterialController.php on line 234.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->bulkInsertFromExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-27 09:11:11 --> Call to a member function isValid() on null
+in APPPATH\Controllers\MaterialController.php on line 234.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->bulkInsertFromExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-27 09:11:45 --> Call to a member function isValid() on null
+in APPPATH\Controllers\MaterialController.php on line 234.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->bulkInsertFromExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-27 09:15:39 --> Call to a member function isValid() on null
+in APPPATH\Controllers\MaterialController.php on line 234.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->bulkInsertFromExcel()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

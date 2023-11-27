@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\Material;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class MaterialController extends ResourceController
 {
@@ -225,6 +226,63 @@ class MaterialController extends ResourceController
     //         return $this->respond($response, 500);
     //     }
     // }
+
+    public function bulkInsertFromExcel()
+    {
+        $file = $this->request->getFile('excel_file');
+
+        if ($file !== null && $file->isValid() && $file->getExtension() === '.xlsx') {
+            // Simpan file Excel ke server
+            $file->move(WRITEPATH . 'uploads');
+
+            // Path file Excel yang diunggah
+            $filePath = WRITEPATH . 'uploads/' . $file->getName();
+
+            // Load file Excel menggunakan PHPSpreadsheet
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+
+            $dataToInsert = [];
+            $highestRow = $sheet->getHighestRow();
+
+            // Mulai dari baris kedua karena baris pertama mungkin berisi header
+            for ($row = 2; $row <= $highestRow; $row++) {
+                $rowData = [
+                    'field1'  => $sheet->getCell('material_number' . $row)->getValue(),
+                    'field2'  => $sheet->getCell('part_number' . $row)->getValue(),
+                    'field3'  => $sheet->getCell('raw_data' . $row)->getValue(),
+                    'field4'  => $sheet->getCell('raw_data2' . $row)->getValue(),
+                    'field5'  => $sheet->getCell('raw_data3' . $row)->getValue(),
+                    'field6'  => $sheet->getCell('raw_data4' . $row)->getValue(),
+                    'field7'  => $sheet->getCell('flag1' . $row)->getValue(),
+                    'field8'  => $sheet->getCell('flag2' . $row)->getValue(),
+                    'field9'  => $sheet->getCell('result' . $row)->getValue(),
+                    'field10' => $sheet->getCell('inc' . $row)->getValue(),
+                    'field11' => $sheet->getCell('mfr' . $row)->getValue(),
+                    'field12' => $sheet->getCell('group_code' . $row)->getValue(),
+                    'field13' => $sheet->getCell('cat' . $row)->getValue(),
+                    'field14' => $sheet->getCell('status' . $row)->getValue(),
+                    'field15' => $sheet->getCell('link' . $row)->getValue(),
+                    // Sesuaikan dengan kolom di Excel dan tabel database
+                ];
+
+                $dataToInsert[] = $rowData;
+            }
+
+            // Lakukan bulk insert ke tabel database
+            $db = \Config\Database::connect();
+            $builder = $db->table('d_material'); // Ganti dengan nama tabel yang sesuai
+
+            $builder->insertBatch($dataToInsert);
+
+            // Hapus file Excel dari server
+            unlink($filePath);
+
+            return "Bulk insert from Excel to database successful!";
+        } else {
+            return "Invalid file or file type. Please upload an Excel file (.xlsx).";
+        }
+    }
 
     public function delete($id = null)
     {

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\Inc;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class IncController extends ResourceController
 {
@@ -117,14 +118,48 @@ class IncController extends ResourceController
 
     }
 
-    /**
-     * Return the editable properties of a resource object
-     *
-     * @return mixed
-     */
-    public function edit($id = null)
+    public function bulkInsertFromExcel()
     {
-        //
+        $file = $this->request->getFile('excel_file');
+
+        if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
+            // Simpan file Excel ke server
+            $file->move(WRITEPATH . 'uploads');
+
+            // Path file Excel yang diunggah
+            $filePath = WRITEPATH . 'uploads/' . $file->getName();
+
+            // Load file Excel menggunakan PHPSpreadsheet
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+
+            $dataToInsert = [];
+            $highestRow = $sheet->getHighestRow();
+
+            // Mulai dari baris kedua karena baris pertama mungkin berisi header
+            for ($row = 2; $row <= $highestRow; $row++) {
+                $rowData = [
+                    'field1' => $sheet->getCell('INC' . $row)->getValue(),
+                    'field2' => $sheet->getCell('INC_NAME' . $row)->getValue(),
+                    // Sesuaikan dengan kolom di Excel dan tabel database
+                ];
+
+                $dataToInsert[] = $rowData;
+            }
+
+            // Lakukan bulk insert ke tabel database
+            $db = \Config\Database::connect();
+            $builder = $db->table('m_inc'); // Ganti dengan nama tabel yang sesuai
+
+            $builder->insertBatch($dataToInsert);
+
+            // Hapus file Excel dari server
+            unlink($filePath);
+
+            return "Bulk insert from Excel to database successful!";
+        } else {
+            return "Invalid file or file type. Please upload an Excel file (.xlsx).";
+        }
     }
 
     /**
