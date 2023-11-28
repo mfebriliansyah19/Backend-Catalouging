@@ -1,0 +1,49 @@
+# Ignore system generated files
+/application/logs/
+/application/cache/
+/application/config/development/
+/application/config/testing/
+/application/config/staging/
+/application/config/production/
+/system/core/
+/system/database/
+/system/fonts/
+/system/helpers/
+/system/language/
+/system/libraries/
+/system/logs/
+/system/third_party/
+/system/uploads/
+/system/index.html
+
+# Ignore environment-specific configuration files
+/application/config/config.php
+/application/config/database.php
+
+# Ignore specific files or directories from third-party libraries or dependencies
+/vendor/
+/node_modules/
+
+# Ignore user-specific files
+/.htaccess
+/composer.json
+/composer.lock
+
+# Ignore IDE or editor-specific files
+*.sublime-project
+*.sublime-workspace
+*.idea/
+.vscode/
+
+# Ignore any generated backup files
+*~
+*.swp
+*.bak
+
+# Ignore DebugBar assets or cache directories (if used)
+/application/third_party/phpdebugbar/
+/assets/phpdebugbar/
+
+# Ignore DebugBar configuration or log files (if applicable)
+/application/config/debugbar.php
+/application/logs/phpdebugbar.log
