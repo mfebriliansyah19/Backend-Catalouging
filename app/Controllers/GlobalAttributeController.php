@@ -59,22 +59,22 @@ class GlobalAttributeController extends ResourceController
      */
     public function create()
     {
-        // $validation = \Config\Services::validation();
-        // $validation->setRules([
-        //     'attribute_code' => 'required',
-        //     'attribute_name' => 'required',
-        // ]);
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'attribute_code' => 'required',
+            'attribute_name' => 'required',
+        ]);
 
-        // if (!$validation->withRequest($this->request)->run()) {
-        //     $response = [
-        //         'status'   => 400,
-        //         'error'    => $validation->getErrors(),
-        //         'messages' => [
-        //         'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-        //         ]
-        //     ];
-        //     return $this->respond($response, 400);
-        // }
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
 
         // $attribute_code = $this->request->getVar('attribute_code');
         // $attribute_name = $this->request->getVar('attribute_name');

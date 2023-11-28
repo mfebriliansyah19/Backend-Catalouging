@@ -42,22 +42,22 @@ class GroupController extends ResourceController
 
     public function create()
     {
-        // $validation = \Config\Services::validation();
-        // $validation->setRules([
-        //     'group_code' => 'required',
-        //     'group_name' => 'required'
-        // ]);
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'group_code' => 'required',
+            'group_name' => 'required'
+        ]);
 
-        // if (!$validation->withRequest($this->request)->run()) {
-        //     $response = [
-        //         'status'   => 400,
-        //         'error'    => $validation->getErrors(),
-        //         'messages' => [
-        //             'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-        //         ]
-        //     ];
-        //     return $this->respond($response, 400);
-        // }
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
 
         // $groupCode = $this->request->getVar('group_code');
         // $groupName = $this->request->getVar('group_name');

@@ -53,23 +53,23 @@ class IncController extends ResourceController
 
     public function create()
     {
-    //     $requestData = $this->request->getJSON();
-    //     $validation = \Config\Services::validation();
-    //     $validation->setRules([
-    //         'INC'       => 'required',
-    //         'INC_NAME'  => 'required'
-    //     ]);
+        $requestData = $this->request->getJSON();
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'INC'       => 'required',
+            'INC_NAME'  => 'required'
+        ]);
 
-    //     if (!$validation->withRequest($this->request)->run()) {
-    //         $response = [
-    //             'status'   => 400,
-    //             'error'    => $validation->getErrors(),
-    //             'messages' => [
-    //             'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-    //             ]
-    //         ];
-    //         return $this->respond($response, 400);
-    //     }
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
 
     //     $INC = $this->request->getVar('INC');
     //     $INC_NAME = $this->request->getVar('INC_NAME');

@@ -57,23 +57,23 @@ class UserController extends ResourceController
      */
     public function create()
     {
-        // $validation = \Config\Services::validation();
-        // $validation->setRules([
-        //     'name'      => 'required',
-        //     'password'  => 'required',
-        //     'role_id'   => 'required'
-        // ]);
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'name'      => 'required',
+            'password'  => 'required',
+            'role_id'   => 'required'
+        ]);
 
-        // if (!$validation->withRequest($this->request)->run()) {
-        //     $response = [
-        //         'status'   => 400,
-        //         'error'    => $validation->getErrors(),
-        //         'messages' => [
-        //         'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-        //         ]
-        //     ];
-        //     return $this->respond($response, 400);
-        // }
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
 
         // $name = $this->request->getVar('name');
         // $password = $this->request->getVar('password');
