@@ -9,7 +9,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // $routes->get('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
-$routes->get('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
+$routes->post('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
 $routes->post('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 
 

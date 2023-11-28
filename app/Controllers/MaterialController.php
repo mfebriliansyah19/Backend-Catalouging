@@ -270,11 +270,7 @@ class MaterialController extends ResourceController
                 var_dump($rowData);
                 $dataToInsert[] = $rowData;
             }
-
-            // Lakukan bulk insert ke tabel database
-            // $db = \Config\Database::connect();
-            // $builder = $db->table('d_material'); // Ganti dengan nama tabel yang sesuai
-
+            
             $this->model->insertBatch($dataToInsert);
             // $builder->insertBatch($dataToInsert);
 

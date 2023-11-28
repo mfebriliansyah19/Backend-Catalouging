@@ -121,8 +121,9 @@ class IncController extends ResourceController
     public function bulkInsertFromExcel()
     {
         $file = $this->request->getFile('excel_file');
+        // var_dump($file->getExtension());
 
-        if ($file !== null && $file->isValid() && $file->getExtension() === '.xlsx') {
+        if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
             // Simpan file Excel ke server
             $file->move(WRITEPATH . 'uploads');
 
@@ -138,20 +139,18 @@ class IncController extends ResourceController
 
             // Mulai dari baris kedua karena baris pertama mungkin berisi header
             for ($row = 2; $row <= $highestRow; $row++) {
+                // var_dump($sheet->getCell('material_number' . $row)->getValue());
                 $rowData = [
-                    'field1' => $sheet->getCell('INC' . $row)->getValue(),
-                    'field2' => $sheet->getCell('INC_NAME' . $row)->getValue(),
+                    'INC'  => $sheet->getCell('A' . $row)->getValue(),
+                    'INC_NAME'  => $sheet->getCell('B' . $row)->getValue(),
                     // Sesuaikan dengan kolom di Excel dan tabel database
                 ];
-
+                var_dump($rowData);
                 $dataToInsert[] = $rowData;
             }
-
-            // Lakukan bulk insert ke tabel database
-            $db = \Config\Database::connect();
-            $builder = $db->table('m_inc'); // Ganti dengan nama tabel yang sesuai
-
-            $builder->insertBatch($dataToInsert);
+            
+            $this->model->insertBatch($dataToInsert);
+            // $builder->insertBatch($dataToInsert);
 
             // Hapus file Excel dari server
             unlink($filePath);
