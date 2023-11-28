@@ -8,8 +8,8 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+// $routes->get('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 $routes->get('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
-$routes->get('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 $routes->post('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 
 

@@ -122,7 +122,7 @@ class IncController extends ResourceController
     {
         $file = $this->request->getFile('excel_file');
 
-        if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
+        if ($file !== null && $file->isValid() && $file->getExtension() === '.xlsx') {
             // Simpan file Excel ke server
             $file->move(WRITEPATH . 'uploads');
 

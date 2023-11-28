@@ -230,8 +230,9 @@ class MaterialController extends ResourceController
     public function bulkInsertFromExcel()
     {
         $file = $this->request->getFile('excel_file');
+        // var_dump($file->getExtension());
 
-        if ($file !== null && $file->isValid() && $file->getExtension() === '.xlsx') {
+        if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
             // Simpan file Excel ke server
             $file->move(WRITEPATH . 'uploads');
 
@@ -247,33 +248,35 @@ class MaterialController extends ResourceController
 
             // Mulai dari baris kedua karena baris pertama mungkin berisi header
             for ($row = 2; $row <= $highestRow; $row++) {
+                // var_dump($sheet->getCell('material_number' . $row)->getValue());
                 $rowData = [
-                    'field1'  => $sheet->getCell('material_number' . $row)->getValue(),
-                    'field2'  => $sheet->getCell('part_number' . $row)->getValue(),
-                    'field3'  => $sheet->getCell('raw_data' . $row)->getValue(),
-                    'field4'  => $sheet->getCell('raw_data2' . $row)->getValue(),
-                    'field5'  => $sheet->getCell('raw_data3' . $row)->getValue(),
-                    'field6'  => $sheet->getCell('raw_data4' . $row)->getValue(),
-                    'field7'  => $sheet->getCell('flag1' . $row)->getValue(),
-                    'field8'  => $sheet->getCell('flag2' . $row)->getValue(),
-                    'field9'  => $sheet->getCell('result' . $row)->getValue(),
-                    'field10' => $sheet->getCell('inc' . $row)->getValue(),
-                    'field11' => $sheet->getCell('mfr' . $row)->getValue(),
-                    'field12' => $sheet->getCell('group_code' . $row)->getValue(),
-                    'field13' => $sheet->getCell('cat' . $row)->getValue(),
-                    'field14' => $sheet->getCell('status' . $row)->getValue(),
-                    'field15' => $sheet->getCell('link' . $row)->getValue(),
+                    'material_number'  => $sheet->getCell('A' . $row)->getValue(),
+                    'part_number'  => $sheet->getCell('B' . $row)->getValue(),
+                    'raw_data'  => $sheet->getCell('C' . $row)->getValue(),
+                    'raw_data2'  => $sheet->getCell('D' . $row)->getValue(),
+                    'raw_data3'  => $sheet->getCell('E' . $row)->getValue(),
+                    'raw_data4'  => $sheet->getCell('F' . $row)->getValue(),
+                    'flag1'  => $sheet->getCell('G' . $row)->getValue(),
+                    'flag2'  => $sheet->getCell('H' . $row)->getValue(),
+                    'result'  => $sheet->getCell('I' . $row)->getValue(),
+                    'inc' => $sheet->getCell('J' . $row)->getValue(),
+                    'mfr' => $sheet->getCell('K' . $row)->getValue(),
+                    'group_code' => $sheet->getCell('L' . $row)->getValue(),
+                    'cat' => $sheet->getCell('M' . $row)->getValue(),
+                    'status' => $sheet->getCell('N' . $row)->getValue(),
+                    'link' => $sheet->getCell('O' . $row)->getValue(),
                     // Sesuaikan dengan kolom di Excel dan tabel database
                 ];
-
+                var_dump($rowData);
                 $dataToInsert[] = $rowData;
             }
 
             // Lakukan bulk insert ke tabel database
-            $db = \Config\Database::connect();
-            $builder = $db->table('d_material'); // Ganti dengan nama tabel yang sesuai
+            // $db = \Config\Database::connect();
+            // $builder = $db->table('d_material'); // Ganti dengan nama tabel yang sesuai
 
-            $builder->insertBatch($dataToInsert);
+            $this->model->insertBatch($dataToInsert);
+            // $builder->insertBatch($dataToInsert);
 
             // Hapus file Excel dari server
             unlink($filePath);

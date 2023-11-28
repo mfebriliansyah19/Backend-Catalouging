@@ -1,0 +1,35 @@
+CRITICAL - 2023-11-28 06:08:42 --> Invalid cell coordinate MATERIAL_NUMBER2
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php on line 43.
+ 1 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(55): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('MATERIAL_NUMBER2')
+ 2 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1399): PhpOffice\PhpSpreadsheet\Cell\Coordinate::indexesFromString('MATERIAL_NUMBER2')
+ 3 VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1289): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('MATERIAL_NUMBER2')
+ 4 APPPATH\Controllers\MaterialController.php(251): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('material_number2')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->bulkInsertFromExcel()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 06:27:05 --> CodeIgniter\Validation\Validation::run(): Argument #1 ($data) must be of type ?array, stdClass given, called in C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AuthController.php on line 25
+in SYSTEMPATH\Validation\Validation.php on line 132.
+ 1 APPPATH\Controllers\AuthController.php(25): CodeIgniter\Validation\Validation->run(Object(stdClass))
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 06:27:26 --> CodeIgniter\Validation\Validation::run(): Argument #1 ($data) must be of type ?array, stdClass given, called in C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AuthController.php on line 25
+in SYSTEMPATH\Validation\Validation.php on line 132.
+ 1 APPPATH\Controllers\AuthController.php(25): CodeIgniter\Validation\Validation->run(Object(stdClass))
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 06:28:02 --> CodeIgniter\Validation\Validation::run(): Argument #1 ($data) must be of type ?array, stdClass given, called in C:\xampp\htdocs\Backend-Catalouging\app\Controllers\AuthController.php on line 25
+in SYSTEMPATH\Validation\Validation.php on line 132.
+ 1 APPPATH\Controllers\AuthController.php(25): CodeIgniter\Validation\Validation->run(Object(stdClass))
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
