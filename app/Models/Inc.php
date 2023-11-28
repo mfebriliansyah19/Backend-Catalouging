@@ -20,6 +20,11 @@ class Inc extends Model
                     // ->asArray()
                     ->findAll();
     }
+
+    public function updateINC($id, $INC)
+    {
+        $this->where('id', $id)->set(['INC' => $INC])->update();
+    }
     // Dates
     // protected $useTimestamps = true;
     // protected $dateFormat    = 'datetime';

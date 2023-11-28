@@ -10,11 +10,6 @@ class IncController extends ResourceController
 {
         protected $modelName = 'App\Models\Inc';
 
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
@@ -70,30 +65,6 @@ class IncController extends ResourceController
             ];
             return $this->respond($response, 400);
         }
-
-    //     $INC = $this->request->getVar('INC');
-    //     $INC_NAME = $this->request->getVar('INC_NAME');
-
-    //     $model = new Inc();
-
-    //    // Periksa apakah data sudah ada di dalam database
-    //    $existingData = $model->where('INC', $requestData->INC)->first();
-    //    $existingData = $model->where('INC_NAME', $requestData->INC_NAME)->first();
-
-    //    if ($existingData) {
-    //        // Jika data sudah ada, berikan respons bahwa data sudah ada
-    //        return $this->fail('Data already exists in the database.', 409); // 409: Conflict
-    //    } else {
-    //        // Jika data belum ada, tambahkan ke dalam database
-    //        $model->insert([
-    //            'INC' => $requestData->$INC,
-    //            'INC_NAME' => $requestData->$INC_NAME,
-    //            // Tambahkan field lain sesuai kebutuhan
-    //        ]);
-
-    //        // Berikan respons sukses jika data berhasil ditambahkan
-    //        return $this->respondCreated(['message' => 'Data added successfully']); // 201: Created
-    //    }
  
     $requestData = $this->request->getJSON();
 
@@ -205,11 +176,27 @@ class IncController extends ResourceController
         return $this->respond($response, 200);
     }
 
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
+
+    public function updateINCByIDs()
+    {
+        $requestData = $this->request->getJSON();
+
+        // Ambil INC dari data yang diterima
+        $INC = $requestData->INC;
+
+        // Ambil array IDs dari data yang diterima
+        $IDs = $requestData->IDs;
+
+        $model = new Inc();
+        foreach ($IDs as $id) {        
+            $model->updateINC($id, $INC);
+        }
+
+        return $this->respond(['message' => 'Data updated with INC successfully'], 200);
+    }
+
+
+
     public function delete($id = null)
     {
         $this->model->delete($id);
