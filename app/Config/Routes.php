@@ -21,6 +21,7 @@ $routes->get('globalattribute', 'globalattributeController::index');
 $routes->get('group', 'groupController::index');
 $routes->get('user', 'userController::index');
 
+$routes->post('material', 'MaterialController::create');
 $routes->post('inc', 'IncController::create');
 $routes->post('attribute', 'attributeController::create');
 $routes->post('globalattribute', 'globalattributeController::create');
