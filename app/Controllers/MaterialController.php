@@ -229,6 +229,9 @@ class MaterialController extends ResourceController
 
     public function bulkInsertFromExcel()
     {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: POST');
+        header("Access-Control-Allow-Headers: X-Requested-With");
         $file = $this->request->getFile('excel_file');
         // var_dump($file->getExtension());
 
@@ -283,7 +286,18 @@ class MaterialController extends ResourceController
 
             return "Bulk insert from Excel to database successful!";
         } else {
-            return "Invalid file or file type. Please upload an Excel file (.xlsx).";
+            // return "Invalid file or file type. Please upload an Excel file (.xlsx). File saat ini" . $file->getExtension();
+            $errorMessage = "Invalid file or file type. Please upload an Excel file (.xlsx). File saat ini";
+
+        if ($file === null) {
+            $errorMessage .= " No file uploaded.";
+        } elseif (!$file->isValid()) {
+            $errorMessage .= " The uploaded file is invalid.";
+        } else {
+            $errorMessage .= " File type received: " . ($file->getExtension() ?? 'unknown');
+        }
+
+        return $errorMessage;
         }
     }
 

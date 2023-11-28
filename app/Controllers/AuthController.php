@@ -16,27 +16,34 @@ class AuthController extends ResourceController
         header('Access-Control-Allow-Methods: GET, POST');
         header("Access-Control-Allow-Headers: X-Requested-With");
         // Validasi data masukan
+
+        $requestData = (array) $this->request->getJSON();
+
         $validation = \Config\Services::validation();
         $validation->setRules([
             'name'      => 'required',
             'password'  => 'required'
         ]);
 
-        if (!$validation->run($this->request->getJSON())) {
+        if (!$validation->run($requestData)) {
             return $this->fail($validation->getErrors(), 400);
         }
 
         $model = new User();
-        $name = $this->request->getJSON('name');
-        $password = $this->request->getJSON('password');
+        $name = $requestData['name'];
+        $password = $requestData['password'];
+        var_dump($name, $password);
         // $role_id = $this->request->getJSON('role_id');
 
-        $user = $user->where('name', $user)->first();
+        $user = $model->where('name', $name)->first();
 
-        if ($user && password_verify($password, $user['password'])) {
-
+        // var_dump($user);
+        var_dump($user['password']);
+        // var_dump($user);
+        // if ($user  && password_verify($password, $user['password'])) {
+        if ($user  && $password === $user['password']) {
             // $this->setToken($user['id']);
-
+            var_dump('Tseeet');
             return $this->respond(['message' => 'Login berhasil']);
         } else {
             return $this->fail('Username atau password salah', 401);
