@@ -13,7 +13,7 @@ class Material extends Model
 
     // Mengambil Semua Data Material
     public function getAllMaterialData() {
-        $materials = $this->select('d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.status, d_material.link, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.attribute_value AS attributeValue')
+        $materials = $this->select('d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.inc AS inc, d_material.mfr as mfr, d_material.group_code AS groupCode, d_material.cat, d_material.status, d_material.link, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.attribute_value AS attributeValue')
                 ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
                 ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
                 ->orderBy('d_material.id')
@@ -58,6 +58,11 @@ class Material extends Model
         $result = array_values($result);
 
         return $result;
+    }
+
+    public function updateINC($id, $inc)
+    {
+        $this->where('id', $id)->set(['inc' => $inc])->update();
     }
 
     // Assign / Update Cataloguer pada Material

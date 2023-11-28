@@ -270,7 +270,7 @@ class MaterialController extends ResourceController
                 var_dump($rowData);
                 $dataToInsert[] = $rowData;
             }
-            
+
             $this->model->insertBatch($dataToInsert);
             // $builder->insertBatch($dataToInsert);
 
@@ -281,6 +281,24 @@ class MaterialController extends ResourceController
         } else {
             return "Invalid file or file type. Please upload an Excel file (.xlsx).";
         }
+    }
+
+    public function updateINCByIDs()
+    {
+        $requestData = $this->request->getJSON();
+
+        // Ambil INC dari data yang diterima
+        $inc = $requestData->inc;
+
+        // Ambil array IDs dari data yang diterima
+        $IDs = $requestData->IDs;
+
+        $model = new Material();
+        foreach ($IDs as $id) {        
+            $model->updateINC($id, $inc);
+        }
+
+        return $this->respond(['message' => 'Data updated with INC successfully'], 200);
     }
 
     public function delete($id = null)

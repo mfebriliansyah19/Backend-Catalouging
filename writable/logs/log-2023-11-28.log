@@ -41,3 +41,93 @@ in APPPATH\Controllers\UserController.php on line 107.
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:29:28 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:31:17 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:31:19 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:32:05 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:32:08 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:33:52 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:34:01 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:35:11 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:35:17 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 291.
+ 1 APPPATH\Controllers\MaterialController.php(291): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\MaterialController.php', 291)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:35:27 --> Undefined variable $inc
+in APPPATH\Models\Material.php on line 65.
+ 1 APPPATH\Models\Material.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Models\\Material.php', 65)
+ 2 APPPATH\Controllers\MaterialController.php(298): App\Models\Material->updateINC(391, '123456')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-28 10:35:53 --> Undefined variable $inc
+in APPPATH\Models\Material.php on line 65.
+ 1 APPPATH\Models\Material.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $inc', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Models\\Material.php', 65)
+ 2 APPPATH\Controllers\MaterialController.php(298): App\Models\Material->updateINC(391, '123456')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MaterialController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

@@ -176,27 +176,6 @@ class IncController extends ResourceController
         return $this->respond($response, 200);
     }
 
-
-    public function updateINCByIDs()
-    {
-        $requestData = $this->request->getJSON();
-
-        // Ambil INC dari data yang diterima
-        $INC = $requestData->INC;
-
-        // Ambil array IDs dari data yang diterima
-        $IDs = $requestData->IDs;
-
-        $model = new Inc();
-        foreach ($IDs as $id) {        
-            $model->updateINC($id, $INC);
-        }
-
-        return $this->respond(['message' => 'Data updated with INC successfully'], 200);
-    }
-
-
-
     public function delete($id = null)
     {
         $this->model->delete($id);

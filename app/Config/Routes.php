@@ -12,7 +12,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->post('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
 $routes->post('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 
-$routes->post('update-inc-by-ids', 'IncController::updateINCByIDs');
+$routes->post('update-inc-by-ids', 'MaterialController::updateINCByIDs');
 
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
