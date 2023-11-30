@@ -20,6 +20,15 @@ class User extends Model
                     // ->asArray()
                     ->findAll();
     }
+
+    public function getCatUser() {
+        return $this->select('user.id AS userId, user.name AS userName, m_user_role.role_name AS userRole')
+                    ->where(['user.role_id' => 4])
+                    ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
+                    ->orderBy('user.id')
+                    // ->asArray()
+                    ->findAll();
+    }
     // Dates
     // protected $useTimestamps = true;
     // protected $dateFormat    = 'datetime';

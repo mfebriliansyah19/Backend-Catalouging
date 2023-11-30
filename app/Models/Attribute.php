@@ -12,7 +12,7 @@ class Attribute extends Model
     protected $allowedFields    = ['inc','attribute_code','attribute_name','attribute_value'];
 
     public function getAllAttributeData() {
-        return $this->select('d_attribute.inc AS inc, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.attribute_value AS attributeValue')
+        return $this->select('d_attribute.id AS id, d_attribute.inc AS inc, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.attribute_value AS attributeValue')
                     ->join('m_inc', 'd_attribute.inc = m_inc.inc', 'left')
                     // ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
                     // ->groupBy('d_material.material_number')

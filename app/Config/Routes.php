@@ -20,6 +20,7 @@ $routes->get('attribute', 'attributeController::index');
 $routes->get('globalattribute', 'globalattributeController::index');
 $routes->get('group', 'groupController::index');
 $routes->get('user', 'userController::index');
+$routes->get('userCat', 'userController::getCataloguer');
 
 $routes->post('inc', 'IncController::create');
 $routes->post('attribute', 'attributeController::create');
