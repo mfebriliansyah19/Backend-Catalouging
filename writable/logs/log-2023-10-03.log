@@ -1,0 +1,137 @@
+CRITICAL - 2023-10-03 06:22:35 --> Undefined variable $update_at
+in APPPATH\Controllers\GlobalAttributeController.php on line 92.
+ 1 APPPATH\Controllers\GlobalAttributeController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $update_at', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\GlobalAttributeController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-03 06:22:51 --> Undefined variable $update_at
+in APPPATH\Controllers\GlobalAttributeController.php on line 92.
+ 1 APPPATH\Controllers\GlobalAttributeController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $update_at', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\GlobalAttributeController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-03 06:23:08 --> Undefined variable $update_at
+in APPPATH\Controllers\GlobalAttributeController.php on line 92.
+ 1 APPPATH\Controllers\GlobalAttributeController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $update_at', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\GlobalAttributeController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-03 06:23:17 --> Undefined variable $update_at
+in APPPATH\Controllers\GlobalAttributeController.php on line 92.
+ 1 APPPATH\Controllers\GlobalAttributeController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $update_at', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\GlobalAttributeController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-03 06:23:40 --> Undefined variable $update_at
+in APPPATH\Controllers\GlobalAttributeController.php on line 92.
+ 1 APPPATH\Controllers\GlobalAttributeController.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $update_at', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\GlobalAttributeController.php', 92)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-03 06:24:30 --> Class "App\Controllers\Attribute" not found
+in APPPATH\Controllers\GlobalAttributeController.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-03 06:25:00 --> mysqli_sql_exception: Unknown column 'd_global_attribute.update_at' in 'field list' in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_globa...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_globa...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_globa...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_globa...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\GlobalAttribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\GlobalAttributeController.php(25): App\Models\GlobalAttribute->getAllGlobalAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-03 06:25:00 --> Unknown column 'd_global_attribute.update_at' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_global_attribute`.`attribute_code` AS `globalattributeCode`, `d_global_attribute`.`attribute_name` AS `globalattributeName`, `d_global_attribute`.`created_at` AS `globalCreated`, `d_global_attribute`.`update_at` AS `globalUpdated`
+FROM `d_global_attribute`
+ORDER BY `d_global_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GlobalAttribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GlobalAttributeController.php(25): App\Models\GlobalAttribute->getAllGlobalAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-03 06:26:36 --> mysqli_sql_exception: Unknown column 'd_global_attribute.update_at' in 'field list' in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_globa...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_globa...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_globa...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_globa...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\GlobalAttribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\GlobalAttributeController.php(25): App\Models\GlobalAttribute->getAllGlobalAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-03 06:26:36 --> Unknown column 'd_global_attribute.update_at' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_global_attribute`.`attribute_code` AS `globalattributeCode`, `d_global_attribute`.`attribute_name` AS `globalattributeName`, `d_global_attribute`.`created_at` AS `globalCreated`, `d_global_attribute`.`update_at` AS `globalUpdated`
+FROM `d_global_attribute`
+ORDER BY `d_global_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GlobalAttribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GlobalAttributeController.php(25): App\Models\GlobalAttribute->getAllGlobalAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-10-03 06:26:45 --> mysqli_sql_exception: Unknown column 'd_global_attribute.update_at' in 'field list' in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_globa...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_globa...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_globa...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_globa...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\GlobalAttribute.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\GlobalAttributeController.php(25): App\Models\GlobalAttribute->getAllGlobalAttributeData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-10-03 06:26:45 --> Unknown column 'd_global_attribute.update_at' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_global_attribute`.`attribute_code` AS `globalattributeCode`, `d_global_attribute`.`attribute_name` AS `globalattributeName`, `d_global_attribute`.`created_at` AS `globalCreated`, `d_global_attribute`.`update_at` AS `globalUpdated`
+FROM `d_global_attribute`
+ORDER BY `d_global_attribute`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GlobalAttribute.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GlobalAttributeController.php(25): App\Models\GlobalAttribute->getAllGlobalAttributeData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

@@ -20,6 +20,8 @@ class Inc extends Model
                     // ->asArray()
                     ->findAll();
     }
+
+    
     // Dates
     // protected $useTimestamps = true;
     // protected $dateFormat    = 'datetime';

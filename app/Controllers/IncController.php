@@ -10,11 +10,6 @@ class IncController extends ResourceController
 {
         protected $modelName = 'App\Models\Inc';
 
-    /**
-     * Return an array of resource objects, themselves in array format
-     *
-     * @return mixed
-     */
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
@@ -53,47 +48,23 @@ class IncController extends ResourceController
 
     public function create()
     {
-    //     $requestData = $this->request->getJSON();
-    //     $validation = \Config\Services::validation();
-    //     $validation->setRules([
-    //         'INC'       => 'required',
-    //         'INC_NAME'  => 'required'
-    //     ]);
+        $requestData = $this->request->getJSON();
+        $validation = \Config\Services::validation();
+        $validation->setRules([
+            'INC'       => 'required',
+            'INC_NAME'  => 'required'
+        ]);
 
-    //     if (!$validation->withRequest($this->request)->run()) {
-    //         $response = [
-    //             'status'   => 400,
-    //             'error'    => $validation->getErrors(),
-    //             'messages' => [
-    //             'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-    //             ]
-    //         ];
-    //         return $this->respond($response, 400);
-    //     }
-
-    //     $INC = $this->request->getVar('INC');
-    //     $INC_NAME = $this->request->getVar('INC_NAME');
-
-    //     $model = new Inc();
-
-    //    // Periksa apakah data sudah ada di dalam database
-    //    $existingData = $model->where('INC', $requestData->INC)->first();
-    //    $existingData = $model->where('INC_NAME', $requestData->INC_NAME)->first();
-
-    //    if ($existingData) {
-    //        // Jika data sudah ada, berikan respons bahwa data sudah ada
-    //        return $this->fail('Data already exists in the database.', 409); // 409: Conflict
-    //    } else {
-    //        // Jika data belum ada, tambahkan ke dalam database
-    //        $model->insert([
-    //            'INC' => $requestData->$INC,
-    //            'INC_NAME' => $requestData->$INC_NAME,
-    //            // Tambahkan field lain sesuai kebutuhan
-    //        ]);
-
-    //        // Berikan respons sukses jika data berhasil ditambahkan
-    //        return $this->respondCreated(['message' => 'Data added successfully']); // 201: Created
-    //    }
+        if (!$validation->withRequest($this->request)->run()) {
+            $response = [
+                'status'   => 400,
+                'error'    => $validation->getErrors(),
+                'messages' => [
+                'error'    => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+                ]
+            ];
+            return $this->respond($response, 400);
+        }
  
     $requestData = $this->request->getJSON();
 
@@ -138,20 +109,18 @@ class IncController extends ResourceController
 
             // Mulai dari baris kedua karena baris pertama mungkin berisi header
             for ($row = 2; $row <= $highestRow; $row++) {
+                // var_dump($sheet->getCell('material_number' . $row)->getValue());
                 $rowData = [
-                    'field1' => $sheet->getCell('INC' . $row)->getValue(),
-                    'field2' => $sheet->getCell('INC_NAME' . $row)->getValue(),
+                    'INC'  => $sheet->getCell('A' . $row)->getValue(),
+                    'INC_NAME'  => $sheet->getCell('B' . $row)->getValue(),
                     // Sesuaikan dengan kolom di Excel dan tabel database
                 ];
-
+                var_dump($rowData);
                 $dataToInsert[] = $rowData;
             }
-
-            // Lakukan bulk insert ke tabel database
-            $db = \Config\Database::connect();
-            $builder = $db->table('m_inc'); // Ganti dengan nama tabel yang sesuai
-
-            $builder->insertBatch($dataToInsert);
+            
+            $this->model->insertBatch($dataToInsert);
+            // $builder->insertBatch($dataToInsert);
 
             // Hapus file Excel dari server
             unlink($filePath);
@@ -206,11 +175,6 @@ class IncController extends ResourceController
         return $this->respond($response, 200);
     }
 
-    /**
-     * Delete the designated resource object from the model
-     *
-     * @return mixed
-     */
     public function delete($id = null)
     {
         $this->model->delete($id);

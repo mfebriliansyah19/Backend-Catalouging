@@ -37,13 +37,9 @@ class AuthController extends ResourceController
 
         $user = $model->where('name', $name)->first();
 
-        // var_dump($user);
-        var_dump($user['password']);
-        // var_dump($user);
         // if ($user  && password_verify($password, $user['password'])) {
         if ($user  && $password === $user['password']) {
             // $this->setToken($user['id']);
-            var_dump('Tseeet');
             return $this->respond(['message' => 'Login berhasil']);
         } else {
             return $this->fail('Username atau password salah', 401);

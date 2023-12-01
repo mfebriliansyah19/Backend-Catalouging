@@ -1,0 +1,78 @@
+CRITICAL - 2023-09-28 07:51:53 --> Undefined variable $rules
+in APPPATH\Controllers\IncController.php on line 60.
+ 1 APPPATH\Controllers\IncController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rules', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:53:04 --> Undefined variable $rules
+in APPPATH\Controllers\IncController.php on line 60.
+ 1 APPPATH\Controllers\IncController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rules', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:55:01 --> Undefined variable $rules
+in APPPATH\Controllers\IncController.php on line 60.
+ 1 APPPATH\Controllers\IncController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rules', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:55:26 --> Undefined variable $rules
+in APPPATH\Controllers\IncController.php on line 60.
+ 1 APPPATH\Controllers\IncController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rules', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:56:12 --> Object of class App\Controllers\IncController could not be converted to string
+in APPPATH\Controllers\IncController.php on line 67.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:56:21 --> Object of class App\Controllers\IncController could not be converted to string
+in APPPATH\Controllers\IncController.php on line 67.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:58:10 --> CodeIgniter\RESTful\ResourceController::failValidationError(): Argument #1 ($description) must be of type string, array given, called in C:\xampp\htdocs\Backend-Catalouging\app\Controllers\IncController.php on line 70
+in SYSTEMPATH\API\ResponseTrait.php on line 229.
+ 1 APPPATH\Controllers\IncController.php(70): CodeIgniter\RESTful\ResourceController->failValidationError([...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:58:32 --> CodeIgniter\RESTful\ResourceController::failValidationError(): Argument #1 ($description) must be of type string, array given, called in C:\xampp\htdocs\Backend-Catalouging\app\Controllers\IncController.php on line 70
+in SYSTEMPATH\API\ResponseTrait.php on line 229.
+ 1 APPPATH\Controllers\IncController.php(70): CodeIgniter\RESTful\ResourceController->failValidationError([...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:58:43 --> CodeIgniter\RESTful\ResourceController::failValidationError(): Argument #1 ($description) must be of type string, array given, called in C:\xampp\htdocs\Backend-Catalouging\app\Controllers\IncController.php on line 70
+in SYSTEMPATH\API\ResponseTrait.php on line 229.
+ 1 APPPATH\Controllers\IncController.php(70): CodeIgniter\RESTful\ResourceController->failValidationError([...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-28 07:59:34 --> CodeIgniter\RESTful\ResourceController::failValidationError(): Argument #1 ($description) must be of type string, array given, called in C:\xampp\htdocs\Backend-Catalouging\app\Controllers\IncController.php on line 70
+in SYSTEMPATH\API\ResponseTrait.php on line 229.
+ 1 APPPATH\Controllers\IncController.php(70): CodeIgniter\RESTful\ResourceController->failValidationError([...])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

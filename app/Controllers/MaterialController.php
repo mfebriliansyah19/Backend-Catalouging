@@ -274,10 +274,6 @@ class MaterialController extends ResourceController
                 $dataToInsert[] = $rowData;
             }
 
-            // Lakukan bulk insert ke tabel database
-            // $db = \Config\Database::connect();
-            // $builder = $db->table('d_material'); // Ganti dengan nama tabel yang sesuai
-
             $this->model->insertBatch($dataToInsert);
             // $builder->insertBatch($dataToInsert);
 
@@ -286,19 +282,26 @@ class MaterialController extends ResourceController
 
             return "Bulk insert from Excel to database successful!";
         } else {
-            // return "Invalid file or file type. Please upload an Excel file (.xlsx). File saat ini" . $file->getExtension();
-            $errorMessage = "Invalid file or file type. Please upload an Excel file (.xlsx). File saat ini";
+            return "Invalid file or file type. Please upload an Excel file (.xlsx).";
+        }
+    }
 
-        if ($file === null) {
-            $errorMessage .= " No file uploaded.";
-        } elseif (!$file->isValid()) {
-            $errorMessage .= " The uploaded file is invalid.";
-        } else {
-            $errorMessage .= " File type received: " . ($file->getExtension() ?? 'unknown');
+    public function updateINCByIDs()
+    {
+        $requestData = $this->request->getJSON();
+
+        // Ambil INC dari data yang diterima
+        $inc = $requestData->inc;
+
+        // Ambil array IDs dari data yang diterima
+        $IDs = $requestData->IDs;
+
+        $model = new Material();
+        foreach ($IDs as $id) {        
+            $model->updateINC($id, $inc);
         }
 
-        return $errorMessage;
-        }
+        return $this->respond(['message' => 'Data updated with INC successfully'], 200);
     }
 
     public function delete($id = null)

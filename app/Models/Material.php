@@ -61,6 +61,11 @@ class Material extends Model
         return $result;
     }
 
+    public function updateINC($id, $inc)
+    {
+        $this->where('id', $id)->set(['inc' => $inc])->update();
+    }
+
     // Assign / Update Cataloguer pada Material
     public function updateCat($id, $newCat) {
         $data = ['cat' => $newCat];

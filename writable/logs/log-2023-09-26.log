@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+CRITICAL - 2023-09-26 05:16:07 --> Class "App\Inc\Model" not found
+in APPPATH\Models\Inc.php on line 7.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Models\\Inc.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Inc')
+ 4 APPPATH\Controllers\IncController.php(25): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Inc')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 05:18:22 --> Class "App\Models\Inc" not found
+in APPPATH\Controllers\IncController.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 05:18:45 --> Class "App\Models\Inc" not found
+in APPPATH\Controllers\IncController.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+=======
 ERROR - 2023-09-26 06:15:16 --> mysqli_sql_exception: Table 'cataloguing_tool.attribute' doesn't exist in E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
 Stack trace:
 #0 E:\a.Kerja\intern-app\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `materia...', 0)
@@ -382,3 +409,221 @@ ORDER BY `d_material`.`id`', [], false)
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\a.Kerja\\intern-app\\Backend-Catalouging\\public\\index.php')
+>>>>>>> c64a3667afb39065da7b7a3321ba8dee4fa57eca
+CRITICAL - 2023-09-26 11:38:02 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:40:36 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:40:51 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:44:33 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:45:56 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:46:03 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:47:41 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:48:11 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 11:50:04 --> syntax error, unexpected token "<<", expecting end of file
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 12:15:04 --> Call to undefined method App\Models\Inc::getAllIncData
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\IncController.php(23): CodeIgniter\Model->__call('getAllIncData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 12:17:10 --> mysqli_sql_exception: Not unique table/alias: 'm_inc' in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `d_mater...', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `d_mater...')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `d_mater...')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_mater...', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Inc.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\IncController.php(23): App\Models\Inc->getAllIncData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\IncController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-09-26 12:17:10 --> Not unique table/alias: 'm_inc'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `d_material`.`material_number` AS `materialNumber`, `d_material`.`part_number` AS `partNumber`, `d_material`.`raw_data` AS `rawData`, `d_material`.`result`, `d_material`.`inc`, `d_material`.`mfr`, `d_material`.`group_code` AS `groupCode`, `d_material`.`where_used` AS `whereUsed`, `d_material`.`cat`, `d_material`.`status`, `d_material`.`link`, `m_inc`.`inc_name` AS `incName`, `d_attribute`.`attribute_code` AS `attributeCode`, `d_attribute`.`attribute_name` AS `attributeName`
+FROM `m_inc`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+GROUP BY `d_material`.`material_number`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Inc.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\IncController.php(23): App\Models\Inc->getAllIncData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 12:23:03 --> Undefined variable $data
+in APPPATH\Controllers\IncController.php on line 32.
+ 1 APPPATH\Controllers\IncController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 12:25:20 --> mysqli_sql_exception: Not unique table/alias: 'm_inc' in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `m_inc`....', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_inc`....')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_inc`....')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `m_inc`....', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Inc.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\IncController.php(23): App\Models\Inc->getAllIncData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\IncController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-09-26 12:25:20 --> Not unique table/alias: 'm_inc'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `m_inc`.`INC` AS `inc`, `m_inc`.`INC_NAME` AS `incName`
+FROM `m_inc`
+LEFT JOIN `m_inc` ON `d_material`.`inc` = `m_inc`.`inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+GROUP BY `d_material`.`material_number`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Inc.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\IncController.php(23): App\Models\Inc->getAllIncData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 12:26:46 --> Undefined variable $data
+in APPPATH\Controllers\IncController.php on line 32.
+ 1 APPPATH\Controllers\IncController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+ERROR - 2023-09-26 12:28:04 --> mysqli_sql_exception: Unknown column 'd_material.inc' in 'on clause' in C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Backend-Catalouging\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `m_inc`....', 0)
+#1 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_inc`....')
+#2 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_inc`....')
+#3 C:\xampp\htdocs\Backend-Catalouging\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `m_inc`....', Array, false)
+#4 C:\xampp\htdocs\Backend-Catalouging\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Backend-Catalouging\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Backend-Catalouging\app\Models\Inc.php(21): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Backend-Catalouging\app\Controllers\IncController.php(23): App\Models\Inc->getAllIncData()
+#8 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(919): App\Controllers\IncController->index()
+#9 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+#10 C:\xampp\htdocs\Backend-Catalouging\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Backend-Catalouging\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\Backend-Catalouging\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2023-09-26 12:28:04 --> Unknown column 'd_material.inc' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `m_inc`.`INC` AS `inc`, `m_inc`.`INC_NAME` AS `incName`
+FROM `m_inc`
+LEFT JOIN `d_attribute` ON `d_material`.`inc` = `d_attribute`.`inc`
+GROUP BY `d_material`.`material_number`
+ORDER BY `d_material`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Inc.php(21): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\IncController.php(23): App\Models\Inc->getAllIncData()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 12:30:08 --> Undefined variable $data
+in APPPATH\Controllers\IncController.php on line 32.
+ 1 APPPATH\Controllers\IncController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 12:32:48 --> Undefined variable $data
+in APPPATH\Controllers\IncController.php on line 32.
+ 1 APPPATH\Controllers\IncController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 12:33:35 --> Undefined variable $data
+in APPPATH\Controllers\IncController.php on line 32.
+ 1 APPPATH\Controllers\IncController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-09-26 12:34:32 --> Undefined variable $data
+in APPPATH\Controllers\IncController.php on line 32.
+ 1 APPPATH\Controllers\IncController.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

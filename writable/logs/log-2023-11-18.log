@@ -1,0 +1,143 @@
+CRITICAL - 2023-11-18 11:56:41 --> Undefined variable $requestData
+in APPPATH\Controllers\IncController.php on line 83.
+ 1 APPPATH\Controllers\IncController.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $requestData', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 83)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 11:56:49 --> Undefined variable $requestData
+in APPPATH\Controllers\IncController.php on line 83.
+ 1 APPPATH\Controllers\IncController.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $requestData', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 83)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:00:42 --> Undefined property: CodeIgniter\Validation\Validation::$INC
+in APPPATH\Controllers\IncController.php on line 83.
+ 1 APPPATH\Controllers\IncController.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\Validation\\Validation::$INC', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 83)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:01:24 --> Undefined property: stdClass::$Testing
+in APPPATH\Controllers\IncController.php on line 93.
+ 1 APPPATH\Controllers\IncController.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Testing', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:02:16 --> Undefined property: stdClass::$Testing
+in APPPATH\Controllers\IncController.php on line 93.
+ 1 APPPATH\Controllers\IncController.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Testing', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:04:21 --> Undefined property: stdClass::$Testing
+in APPPATH\Controllers\IncController.php on line 93.
+ 1 APPPATH\Controllers\IncController.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Testing', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:04:31 --> Undefined property: stdClass::$Testig
+in APPPATH\Controllers\IncController.php on line 93.
+ 1 APPPATH\Controllers\IncController.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Testig', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:04:41 --> Undefined property: stdClass::$Testing
+in APPPATH\Controllers\IncController.php on line 93.
+ 1 APPPATH\Controllers\IncController.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Testing', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:06:22 --> Undefined property: stdClass::$Testing
+in APPPATH\Controllers\IncController.php on line 93.
+ 1 APPPATH\Controllers\IncController.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Testing', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:06:59 --> Undefined property: stdClass::$Testing
+in APPPATH\Controllers\IncController.php on line 93.
+ 1 APPPATH\Controllers\IncController.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Testing', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\IncController.php', 93)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\IncController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\IncController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:18:54 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:22:34 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:22:40 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:23:02 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:23:05 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:23:08 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:24:34 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:25:46 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:25:53 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:26:44 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:27:17 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:27:20 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:27:27 --> Declaration of App\Controllers\GroupController::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\GroupController.php on line 111.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-11-18 12:38:57 --> Undefined property: stdClass::$atrribute_code
+in APPPATH\Controllers\GlobalAttributeController.php on line 114.
+ 1 APPPATH\Controllers\GlobalAttributeController.php(114): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$atrribute_code', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\GlobalAttributeController.php', 114)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:39:22 --> Undefined variable $fieldName
+in APPPATH\Controllers\GlobalAttributeController.php on line 123.
+ 1 APPPATH\Controllers\GlobalAttributeController.php(123): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fieldName', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\GlobalAttributeController.php', 123)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\GlobalAttributeController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GlobalAttributeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-11-18 12:48:35 --> Attempt to read property "name" on null
+in APPPATH\Controllers\UserController.php on line 111.
+ 1 APPPATH\Controllers\UserController.php(111): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "name" on null', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\UserController.php', 111)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

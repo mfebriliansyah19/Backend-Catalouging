@@ -1,0 +1,65 @@
+CRITICAL - 2023-10-16 07:30:28 --> Class "App\Models\User" not found
+in APPPATH\Controllers\UserController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:31:06 --> Class "App\Models\User" not found
+in APPPATH\Controllers\UserController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:32:46 --> Class "App\Models\User" not found
+in APPPATH\Controllers\UserController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:32:49 --> Class "App\Models\User" not found
+in APPPATH\Controllers\UserController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:33:22 --> Class "App\Models\User" not found
+in APPPATH\Controllers\UserController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:33:25 --> Class "App\Models\User" not found
+in APPPATH\Controllers\UserController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:34:06 --> Class "App\Models\User" not found
+in APPPATH\Controllers\UserController.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:49:44 --> Undefined variable $role_id
+in APPPATH\Controllers\UserController.php on line 85.
+ 1 APPPATH\Controllers\UserController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role_id', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\UserController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-10-16 07:51:48 --> Undefined variable $role_id
+in APPPATH\Controllers\UserController.php on line 85.
+ 1 APPPATH\Controllers\UserController.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role_id', 'C:\\xampp\\htdocs\\Backend-Catalouging\\app\\Controllers\\UserController.php', 85)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\Backend-Catalouging\\public\\index.php')

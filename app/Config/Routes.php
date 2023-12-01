@@ -8,10 +8,11 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
 // $routes->get('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
+$routes->post('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
 $routes->post('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 
+$routes->post('update-inc-by-ids', 'MaterialController::updateINCByIDs');
 
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
@@ -22,6 +23,8 @@ $routes->get('group', 'groupController::index');
 $routes->get('user', 'userController::index');
 $routes->get('userCat', 'userController::getCataloguer');
 
+
+$routes->post('material', 'MaterialController::create');
 $routes->post('inc', 'IncController::create');
 $routes->post('attribute', 'attributeController::create');
 $routes->post('globalattribute', 'globalattributeController::create');
