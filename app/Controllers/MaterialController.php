@@ -18,7 +18,7 @@ class MaterialController extends ResourceController
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST, DELETE');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
         header("Access-Control-Allow-Headers: X-Requested-With");
         $model = new Material();
         $materialData = $model->getAllMaterialData();
@@ -42,6 +42,9 @@ class MaterialController extends ResourceController
 
     public function create()
     {
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: X-Requested-With");
         $validation = \Config\Services::validation();
         $validation->setRules([
             'materialNumber' => 'required',
@@ -121,6 +124,10 @@ class MaterialController extends ResourceController
 
     public function update($id = null)
     {
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Access-Control-Allow-Headers, Authorization");
+
         $validation = \Config\Services::validation();
         $validation->setRules([
             'materialNumber' => 'required',
@@ -170,27 +177,26 @@ class MaterialController extends ResourceController
         $model = new Material();
 
         $data = [
-        'materialNumber' =>   $materialNumber ,
-        'partNumber' =>   $partNumber,
-        'rawData'    =>   $rawData,
-        'rawData2'   =>   $rawData2,
-        'rawData3'   =>   $rawData3,
-        'rawData4'   =>   $rawData4,
-        'flag1'      =>   $flag1,
-        'flag2'      =>   $flag2,
-        'result'     =>   $result,
-        'inc'        =>   $inc,
-        'mfr'        =>   $mfr,
-        'groupCode'  =>   $groupCode,
-        'cat'        =>   $cat,
-        'status'     =>   $status,
-        'link'       =>   $link           
+        'material_number'   =>   $materialNumber ,
+        'part_number'       =>   $partNumber,
+        'raw_data'          =>   $rawData,
+        'raw_data2'         =>   $rawData2,
+        'raw_data3'         =>   $rawData3,
+        'raw_data4'         =>   $rawData4,
+        'flag1'             =>   $flag1,
+        'flag2'             =>   $flag2,
+        'result'            =>   $result,
+        'inc'               =>   $inc,
+        'mfr'               =>   $mfr,
+        'group_code'        =>   $groupCode,
+        'cat'               =>   $cat,
+        'status'            =>   $status,
+        'link'              =>   $link           
         ];
 
         $model->update($id, $data);
         $response = [
             'status'   => 201,
-            'error'    => null,
             'messages' => [
             'success' => 'Data Material berhasil diubah.'
             ]
@@ -230,7 +236,7 @@ class MaterialController extends ResourceController
     public function bulkInsertFromExcel()
     {
         header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: POST');
+        header('Access-Control-Allow-Methods: POST, PUT');
         header("Access-Control-Allow-Headers: X-Requested-With");
         $file = $this->request->getFile('excel_file');
         // var_dump($file->getExtension());
@@ -288,6 +294,22 @@ class MaterialController extends ResourceController
 
     public function updateINCByIDs()
     {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: POST, PUT');
+        header("Access-Control-Allow-Headers: X-Requested-With");
+
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            http_response_code(200);
+            exit();
+        }
+
+        // Melanjutkan pemrosesan hanya untuk metode POST
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405); // Method Not Allowed
+            exit();
+        }
+
+
         $requestData = $this->request->getJSON();
 
         // Ambil INC dari data yang diterima
