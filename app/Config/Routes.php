@@ -13,6 +13,7 @@ $routes->post('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
 $routes->post('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 
 $routes->post('update-inc-by-ids', 'MaterialController::updateINCByIDs');
+$routes->post('update-cat-by-ids', 'MaterialController::updatecatByIDs');
 
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
