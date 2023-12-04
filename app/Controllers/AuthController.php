@@ -12,9 +12,11 @@ class AuthController extends ResourceController
 
     public function login()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
-        header("Access-Control-Allow-Headers: X-Requested-With");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         // Validasi data masukan
 
         $requestData = (array) $this->request->getJSON();

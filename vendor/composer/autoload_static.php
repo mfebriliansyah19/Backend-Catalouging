@@ -22,6 +22,10 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
     );
 
     public static $prefixLengthsPsr4 = array (
+        'c' => 
+        array (
+            'chriskacerguis\\RestServer\\' => 26,
+        ),
         'Z' => 
         array (
             'ZipStream\\' => 10,
@@ -100,6 +104,10 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
     );
 
     public static $prefixDirsPsr4 = array (
+        'chriskacerguis\\RestServer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chriskacerguis/codeigniter-restserver/src',
+        ),
         'ZipStream\\' => 
         array (
             0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
@@ -178,8 +186,8 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -4094,6 +4102,8 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
         'Symfony\\Component\\Console\\Completion\\CompletionSuggestions' => __DIR__ . '/..' . '/symfony/console/Completion/CompletionSuggestions.php',
         'Symfony\\Component\\Console\\Completion\\Output\\BashCompletionOutput' => __DIR__ . '/..' . '/symfony/console/Completion/Output/BashCompletionOutput.php',
         'Symfony\\Component\\Console\\Completion\\Output\\CompletionOutputInterface' => __DIR__ . '/..' . '/symfony/console/Completion/Output/CompletionOutputInterface.php',
+        'Symfony\\Component\\Console\\Completion\\Output\\FishCompletionOutput' => __DIR__ . '/..' . '/symfony/console/Completion/Output/FishCompletionOutput.php',
+        'Symfony\\Component\\Console\\Completion\\Output\\ZshCompletionOutput' => __DIR__ . '/..' . '/symfony/console/Completion/Output/ZshCompletionOutput.php',
         'Symfony\\Component\\Console\\Completion\\Suggestion' => __DIR__ . '/..' . '/symfony/console/Completion/Suggestion.php',
         'Symfony\\Component\\Console\\ConsoleEvents' => __DIR__ . '/..' . '/symfony/console/ConsoleEvents.php',
         'Symfony\\Component\\Console\\Cursor' => __DIR__ . '/..' . '/symfony/console/Cursor.php',
@@ -4103,6 +4113,7 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
         'Symfony\\Component\\Console\\Descriptor\\DescriptorInterface' => __DIR__ . '/..' . '/symfony/console/Descriptor/DescriptorInterface.php',
         'Symfony\\Component\\Console\\Descriptor\\JsonDescriptor' => __DIR__ . '/..' . '/symfony/console/Descriptor/JsonDescriptor.php',
         'Symfony\\Component\\Console\\Descriptor\\MarkdownDescriptor' => __DIR__ . '/..' . '/symfony/console/Descriptor/MarkdownDescriptor.php',
+        'Symfony\\Component\\Console\\Descriptor\\ReStructuredTextDescriptor' => __DIR__ . '/..' . '/symfony/console/Descriptor/ReStructuredTextDescriptor.php',
         'Symfony\\Component\\Console\\Descriptor\\TextDescriptor' => __DIR__ . '/..' . '/symfony/console/Descriptor/TextDescriptor.php',
         'Symfony\\Component\\Console\\Descriptor\\XmlDescriptor' => __DIR__ . '/..' . '/symfony/console/Descriptor/XmlDescriptor.php',
         'Symfony\\Component\\Console\\EventListener\\ErrorListener' => __DIR__ . '/..' . '/symfony/console/EventListener/ErrorListener.php',
@@ -4135,6 +4146,7 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
         'Symfony\\Component\\Console\\Helper\\HelperInterface' => __DIR__ . '/..' . '/symfony/console/Helper/HelperInterface.php',
         'Symfony\\Component\\Console\\Helper\\HelperSet' => __DIR__ . '/..' . '/symfony/console/Helper/HelperSet.php',
         'Symfony\\Component\\Console\\Helper\\InputAwareHelper' => __DIR__ . '/..' . '/symfony/console/Helper/InputAwareHelper.php',
+        'Symfony\\Component\\Console\\Helper\\OutputWrapper' => __DIR__ . '/..' . '/symfony/console/Helper/OutputWrapper.php',
         'Symfony\\Component\\Console\\Helper\\ProcessHelper' => __DIR__ . '/..' . '/symfony/console/Helper/ProcessHelper.php',
         'Symfony\\Component\\Console\\Helper\\ProgressBar' => __DIR__ . '/..' . '/symfony/console/Helper/ProgressBar.php',
         'Symfony\\Component\\Console\\Helper\\ProgressIndicator' => __DIR__ . '/..' . '/symfony/console/Helper/ProgressIndicator.php',
@@ -4157,6 +4169,7 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
         'Symfony\\Component\\Console\\Input\\StreamableInputInterface' => __DIR__ . '/..' . '/symfony/console/Input/StreamableInputInterface.php',
         'Symfony\\Component\\Console\\Input\\StringInput' => __DIR__ . '/..' . '/symfony/console/Input/StringInput.php',
         'Symfony\\Component\\Console\\Logger\\ConsoleLogger' => __DIR__ . '/..' . '/symfony/console/Logger/ConsoleLogger.php',
+        'Symfony\\Component\\Console\\Output\\AnsiColorMode' => __DIR__ . '/..' . '/symfony/console/Output/AnsiColorMode.php',
         'Symfony\\Component\\Console\\Output\\BufferedOutput' => __DIR__ . '/..' . '/symfony/console/Output/BufferedOutput.php',
         'Symfony\\Component\\Console\\Output\\ConsoleOutput' => __DIR__ . '/..' . '/symfony/console/Output/ConsoleOutput.php',
         'Symfony\\Component\\Console\\Output\\ConsoleOutputInterface' => __DIR__ . '/..' . '/symfony/console/Output/ConsoleOutputInterface.php',
@@ -4279,6 +4292,7 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
         'Symfony\\Contracts\\Service\\ServiceSubscriberInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberInterface.php',
         'Symfony\\Contracts\\Service\\ServiceSubscriberTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberTrait.php',
         'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTest' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTest.php',
+        'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTestCase' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTestCase.php',
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Intl\\Grapheme\\Grapheme' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/Grapheme.php',
         'Symfony\\Polyfill\\Intl\\Normalizer\\Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Normalizer.php',
@@ -4297,21 +4311,43 @@ class ComposerStaticInitf253663b0c154bfca4b76aa22aa28582
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'ZipStream\\Bigint' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Bigint.php',
+        'ZipStream\\CentralDirectoryFileHeader' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/CentralDirectoryFileHeader.php',
+        'ZipStream\\CompressionMethod' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/CompressionMethod.php',
+        'ZipStream\\DataDescriptor' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/DataDescriptor.php',
         'ZipStream\\DeflateStream' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/DeflateStream.php',
+        'ZipStream\\EndOfCentralDirectory' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/EndOfCentralDirectory.php',
         'ZipStream\\Exception' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception.php',
+        'ZipStream\\Exception\\DosTimeOverflowException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/DosTimeOverflowException.php',
         'ZipStream\\Exception\\EncodingException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/EncodingException.php',
         'ZipStream\\Exception\\FileNotFoundException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/FileNotFoundException.php',
         'ZipStream\\Exception\\FileNotReadableException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/FileNotReadableException.php',
+        'ZipStream\\Exception\\FileSizeIncorrectException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/FileSizeIncorrectException.php',
         'ZipStream\\Exception\\IncompatibleOptionsException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/IncompatibleOptionsException.php',
         'ZipStream\\Exception\\OverflowException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/OverflowException.php',
+        'ZipStream\\Exception\\ResourceActionException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/ResourceActionException.php',
+        'ZipStream\\Exception\\SimulationFileUnknownException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/SimulationFileUnknownException.php',
         'ZipStream\\Exception\\StreamNotReadableException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/StreamNotReadableException.php',
+        'ZipStream\\Exception\\StreamNotSeekableException' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Exception/StreamNotSeekableException.php',
         'ZipStream\\File' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/File.php',
+        'ZipStream\\GeneralPurposeBitFlag' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/GeneralPurposeBitFlag.php',
+        'ZipStream\\LocalFileHeader' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/LocalFileHeader.php',
+        'ZipStream\\OperationMode' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/OperationMode.php',
         'ZipStream\\Option\\Archive' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Option/Archive.php',
         'ZipStream\\Option\\File' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Option/File.php',
         'ZipStream\\Option\\Method' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Option/Method.php',
         'ZipStream\\Option\\Version' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Option/Version.php',
+        'ZipStream\\PackField' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/PackField.php',
         'ZipStream\\Stream' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Stream.php',
+        'ZipStream\\Time' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Time.php',
+        'ZipStream\\Version' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Version.php',
+        'ZipStream\\Zip64\\DataDescriptor' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Zip64/DataDescriptor.php',
+        'ZipStream\\Zip64\\EndOfCentralDirectory' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Zip64/EndOfCentralDirectory.php',
+        'ZipStream\\Zip64\\EndOfCentralDirectoryLocator' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Zip64/EndOfCentralDirectoryLocator.php',
+        'ZipStream\\Zip64\\ExtendedInformationExtraField' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Zip64/ExtendedInformationExtraField.php',
         'ZipStream\\ZipStream' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/ZipStream.php',
+        'ZipStream\\Zs\\ExtendedInformationExtraField' => __DIR__ . '/..' . '/maennchen/zipstream-php/src/Zs/ExtendedInformationExtraField.php',
+        'chriskacerguis\\RestServer\\Format' => __DIR__ . '/..' . '/chriskacerguis/codeigniter-restserver/src/Format.php',
+        'chriskacerguis\\RestServer\\RestController' => __DIR__ . '/..' . '/chriskacerguis/codeigniter-restserver/src/RestController.php',
         'org\\bovigo\\vfs\\DotDirectory' => __DIR__ . '/..' . '/mikey179/vfsstream/src/main/php/org/bovigo/vfs/DotDirectory.php',
         'org\\bovigo\\vfs\\Quota' => __DIR__ . '/..' . '/mikey179/vfsstream/src/main/php/org/bovigo/vfs/Quota.php',
         'org\\bovigo\\vfs\\content\\FileContent' => __DIR__ . '/..' . '/mikey179/vfsstream/src/main/php/org/bovigo/vfs/content/FileContent.php',

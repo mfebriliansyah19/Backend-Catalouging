@@ -16,9 +16,11 @@ class GroupController extends ResourceController
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST, DELETE');
-        header("Access-Control-Allow-Headers: X-Requested-With");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         $model = new GroupModel();
         $groupData = $model->getAllGroupData();
         // return $this->respond($data,200);
@@ -160,44 +162,44 @@ class GroupController extends ResourceController
         }
     }
 
-    public function update($id = null)
-    {
-        $validation = \Config\Services::validation();
-        $validation->setRules([
-            'group_code' => 'required',
-            'group_name' => 'required'
-        ]);
+    // public function update($id = null)
+    // {
+    //     $validation = \Config\Services::validation();
+    //     $validation->setRules([
+    //         'group_code' => 'required',
+    //         'group_name' => 'required'
+    //     ]);
 
-        if (!$validation->withRequest($this->request)->run()) {
-            $response = [
-                'status'   => 400,
-                'error'    => $validation->getErrors(),
-                'messages' => [
-                    'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
-                ]
-            ];
-            return $this->respond($response, 400);
-        }
+    //     if (!$validation->withRequest($this->request)->run()) {
+    //         $response = [
+    //             'status'   => 400,
+    //             'error'    => $validation->getErrors(),
+    //             'messages' => [
+    //                 'error' => 'Validasi data gagal. Mohon isi semua field dengan benar.'
+    //             ]
+    //         ];
+    //         return $this->respond($response, 400);
+    //     }
 
-        $groupCode = $this->request->getVar('group_code');
-        $groupName = $this->request->getVar('group_name');
+    //     $groupCode = $this->request->getVar('group_code');
+    //     $groupName = $this->request->getVar('group_name');
 
-        $model = new GroupModel();
-        $data = [
-            'group_code' => $groupCode,
-            'group_name' => $groupName,
-        ];
+    //     $model = new GroupModel();
+    //     $data = [
+    //         'group_code' => $groupCode,
+    //         'group_name' => $groupName,
+    //     ];
 
-        $model->update($id, $data);
-        $response = [
-            'status'   => 201,
-            'error'    => null,
-            'messages' => [
-                'success' => 'Data Group berhasil diubah.'
-            ]
-        ];
-        return $this->respond($response, 200);
-    }
+    //     $model->update($id, $data);
+    //     $response = [
+    //         'status'   => 201,
+    //         'error'    => null,
+    //         'messages' => [
+    //             'success' => 'Data Group berhasil diubah.'
+    //         ]
+    //     ];
+    //     return $this->respond($response, 200);
+    // }
 
     public function delete($id = null)
     {

@@ -17,9 +17,11 @@ class GlobalAttributeController extends ResourceController
      */
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST, DELETE');
-        header("Access-Control-Allow-Headers: X-Requested-With");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         
         $model = new GlobalAttribute();
         $GlobalAttributeData = $model->getAllGLobalAttributeData();

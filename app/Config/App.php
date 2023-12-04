@@ -175,4 +175,13 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+
+    public $CORS = [
+        'origin'         => ['*'],
+        'methods'        => ['get', 'post', 'put', 'delete'],
+        'headers'        => ['Content-Type', 'Authorization', 'Accept', 'Origin'],
+        'maxAge'         => 3600,
+        'exposedHeaders' => [],
+        'credentials'    => false,
+    ];
 }

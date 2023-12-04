@@ -15,11 +15,14 @@ class MaterialController extends ResourceController
      *
      * @return mixed
      */
+    
     public function index()
     {
-        header('Access-Control-Allow-Origin: *');
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-        header("Access-Control-Allow-Headers: X-Requested-With");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         $model = new Material();
         $materialData = $model->getAllMaterialData();
 
@@ -42,9 +45,11 @@ class MaterialController extends ResourceController
 
     public function create()
     {
-        header('Access-Control-Allow-Origin: *');
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-        header("Access-Control-Allow-Headers: X-Requested-With");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         $validation = \Config\Services::validation();
         $validation->setRules([
             'materialNumber' => 'required',
@@ -124,27 +129,28 @@ class MaterialController extends ResourceController
 
     public function update($id = null)
     {
-        header('Access-Control-Allow-Origin: *');
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-        header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Access-Control-Allow-Headers, Authorization");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
         $validation = \Config\Services::validation();
         $validation->setRules([
             'materialNumber' => 'required',
-            'partNumber'     => 'required',
-            'rawData'        => 'required',
-            'rawData2'       => 'required',
-            'rawData3'       => 'required',
-            'rawData4'       => 'required',
-            'flag1'          => 'required',
-            'flag2'          => 'required',
-            'result'         => 'required',
-            'inc'            => 'required',
-            'mfr'            => 'required',
-            'groupCode'      => 'required',
-            'cat'            => 'required',
-            'status'         => 'required',
-            'link'           => 'required'
+            // 'partNumber'     => 'required',
+            // 'rawData'        => 'required',
+            // 'rawData2'       => 'required',
+            // 'rawData3'       => 'required',
+            // 'rawData4'       => 'required',
+            // 'flag1'          => 'required',
+            // 'flag2'          => 'required',
+            // 'result'         => 'required',
+            // 'inc'            => 'required',
+            // 'mfr'            => 'required',
+            // 'groupCode'      => 'required',
+            // 'cat'            => 'required',
+            // 'status'         => 'required',
+            // 'link'           => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -235,9 +241,11 @@ class MaterialController extends ResourceController
 
     public function bulkInsertFromExcel()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: POST, PUT');
-        header("Access-Control-Allow-Headers: X-Requested-With");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         $file = $this->request->getFile('excel_file');
         // var_dump($file->getExtension());
 
@@ -294,9 +302,11 @@ class MaterialController extends ResourceController
 
     public function updateINCByIDs()
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: POST, PUT');
-        header("Access-Control-Allow-Headers: X-Requested-With");
+        // Mengizinkan semua origin
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
             http_response_code(200);
