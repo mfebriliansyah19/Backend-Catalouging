@@ -336,6 +336,24 @@ class MaterialController extends ResourceController
         return $this->respond(['message' => 'Data updated with INC successfully'], 200);
     }
 
+    public function updatecatByIDs()
+    {
+        $requestData = $this->request->getJSON();
+
+        // Ambil INC dari data yang diterima
+        $cat = $requestData->cat;
+
+        // Ambil array IDs dari data yang diterima
+        $IDs = $requestData->IDs;
+
+        $model = new Material();
+        foreach ($IDs as $id) {        
+            $model->updatecat($id, $cat);
+        }
+
+        return $this->respond(['message' => 'Data updated with cat successfully'], 200);
+    }
+
     public function delete($id = null)
     {
         $this->model->delete($id);
