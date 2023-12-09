@@ -1,0 +1,213 @@
+CRITICAL - 2023-12-04 03:39:54 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:39:54 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:39:54 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:40:05 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:40:05 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:40:05 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:43:04 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:43:04 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 03:43:04 --> Declaration of App\Filters\Options::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = null)
+in APPPATH\Filters\Options.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-12-04 04:05:10 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:10 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:10 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:33 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:33 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:33 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:37 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:37 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:05:37 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:07:31 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:07:32 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:07:32 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:11:21 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:11:21 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:11:21 --> Class "Config\AppFiltersCors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:37:09 --> Cannot call constructor
+in APPPATH\Controllers\MaterialController.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\MaterialController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:37:17 --> Cannot call constructor
+in APPPATH\Controllers\MaterialController.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\MaterialController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 04:39:35 --> Cannot call constructor
+in APPPATH\Controllers\MaterialController.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\MaterialController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 05:11:25 --> Class "App\Filters\Cors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 05:11:26 --> Class "App\Filters\Cors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 05:11:26 --> Class "App\Filters\Cors" not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 07:28:04 --> "cors" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 576.
+ 1 SYSTEMPATH\Filters\Filters.php(576): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(259): CodeIgniter\Filters\Filters->processAliasesToClass()
+ 3 SYSTEMPATH\Filters\Filters.php(170): CodeIgniter\Filters\Filters->initialize()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 07:28:04 --> "cors" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 576.
+ 1 SYSTEMPATH\Filters\Filters.php(576): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(259): CodeIgniter\Filters\Filters->processAliasesToClass()
+ 3 SYSTEMPATH\Filters\Filters.php(170): CodeIgniter\Filters\Filters->initialize()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 07:28:04 --> "cors" filter must have a matching alias defined.
+in SYSTEMPATH\Filters\Filters.php on line 576.
+ 1 SYSTEMPATH\Filters\Filters.php(576): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias()
+ 2 SYSTEMPATH\Filters\Filters.php(259): CodeIgniter\Filters\Filters->processAliasesToClass()
+ 3 SYSTEMPATH\Filters\Filters.php(170): CodeIgniter\Filters\Filters->initialize()
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 07:28:56 --> Class "CodeIgniter\Middleware\BaseMiddleware" not found
+in APPPATH\Middleware\CORS.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 4 SYSTEMPATH\Filters\Filters.php(173): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 07:28:56 --> Class "CodeIgniter\Middleware\BaseMiddleware" not found
+in APPPATH\Middleware\CORS.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 4 SYSTEMPATH\Filters\Filters.php(173): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-04 07:28:56 --> Class "CodeIgniter\Middleware\BaseMiddleware" not found
+in APPPATH\Middleware\CORS.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 4 SYSTEMPATH\Filters\Filters.php(173): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')

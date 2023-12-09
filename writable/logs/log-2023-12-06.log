@@ -1,0 +1,126 @@
+CRITICAL - 2023-12-06 02:58:40 --> Undefined array key "role"
+in APPPATH\Controllers\AuthController.php on line 49.
+ 1 APPPATH\Controllers\AuthController.php(49): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:00:44 --> Undefined array key "role_name"
+in APPPATH\Controllers\AuthController.php on line 49.
+ 1 APPPATH\Controllers\AuthController.php(49): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:05:39 --> Undefined variable $userRole
+in APPPATH\Controllers\AuthController.php on line 43.
+ 1 APPPATH\Controllers\AuthController.php(43): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:06:31 --> Undefined variable $userRole
+in APPPATH\Controllers\AuthController.php on line 45.
+ 1 APPPATH\Controllers\AuthController.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:06:41 --> Undefined array key "role_name"
+in APPPATH\Controllers\AuthController.php on line 45.
+ 1 APPPATH\Controllers\AuthController.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:07:12 --> Undefined array key "role_name"
+in APPPATH\Controllers\AuthController.php on line 45.
+ 1 APPPATH\Controllers\AuthController.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:07:20 --> Undefined array key "roleName"
+in APPPATH\Controllers\AuthController.php on line 45.
+ 1 APPPATH\Controllers\AuthController.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:08:57 --> Undefined array key "role_name"
+in APPPATH\Controllers\AuthController.php on line 45.
+ 1 APPPATH\Controllers\AuthController.php(45): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:12:27 --> Undefined array key "userId"
+in APPPATH\Controllers\AuthController.php on line 41.
+ 1 APPPATH\Controllers\AuthController.php(41): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:14:12 --> Undefined array key "userId"
+in APPPATH\Controllers\AuthController.php on line 41.
+ 1 APPPATH\Controllers\AuthController.php(41): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:14:36 --> Undefined array key "UserName"
+in APPPATH\Controllers\AuthController.php on line 42.
+ 1 APPPATH\Controllers\AuthController.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:14:58 --> Call to a member function where() on null
+in APPPATH\Controllers\AuthController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:15:06 --> Call to a member function where() on array
+in APPPATH\Controllers\AuthController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:15:10 --> Undefined array key "role_name"
+in APPPATH\Controllers\AuthController.php on line 43.
+ 1 APPPATH\Controllers\AuthController.php(43): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:22:59 --> Undefined array key "userName"
+in APPPATH\Controllers\AuthController.php on line 41.
+ 1 APPPATH\Controllers\AuthController.php(41): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
+CRITICAL - 2023-12-06 03:23:35 --> Undefined array key "role_name"
+in APPPATH\Controllers\AuthController.php on line 43.
+ 1 APPPATH\Controllers\AuthController.php(43): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AuthController->login()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
