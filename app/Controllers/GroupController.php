@@ -211,15 +211,4 @@ class GroupController extends ResourceController
 
         return $this->respondDeleted($response);
     }
-
-    public function delete($id = null)
-    {
-        $this->model->delete($id);
-
-        $response = [
-            'success' => 'Data Group berhasil dihapus.'
-        ];
-
-        return $this->respondDeleted($response);
-    }
 }

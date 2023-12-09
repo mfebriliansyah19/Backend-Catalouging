@@ -12,10 +12,8 @@ class User extends Model
     protected $allowedFields    = ['name','password','role_id'];
 
     public function getAllUserData() {
-        return $this->select('user.name AS userName, user.password AS userPassword, user.role_id AS userRole')
-                    // ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
-                    // ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
-                    // ->groupBy('d_material.material_number')
+        return $this->select('user.name AS userName, user.password AS userPassword, user.role_id AS userRoleId, m_user_role.role_name AS userRole')
+                    ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
                     ->orderBy('user.id')
                     // ->asArray()
                     ->findAll();

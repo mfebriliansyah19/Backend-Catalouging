@@ -126,7 +126,8 @@ class AttributeController extends ResourceController
             'INC'                => 'required',
             'attribute_code'     => 'required',
             'attribute_name'     => 'required',
-            'attribute_value'    => 'required'
+            'attribute_value'    => 'required',
+            'sequence'           => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -144,6 +145,7 @@ class AttributeController extends ResourceController
         $attribute_code     = $this->request->getVar('attribute_code');
         $attribute_name     = $this->request->getVar('attribute_name');
         $attribute_value    = $this->request->getVar('attribute_value');
+        $sequence           = $this->request->getVar('sequence');
 
         $model = new Attribute();
 
@@ -152,6 +154,7 @@ class AttributeController extends ResourceController
             'attribute_code'    => $attribute_code,
             'attribute_name'    => $attribute_name,
             'attribute_value'   => $attribute_value,
+            'sequence'          => $sequence,
         ];
 
         $model->update($id, $data);

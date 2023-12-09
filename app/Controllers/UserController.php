@@ -104,27 +104,6 @@ class UserController extends ResourceController
             return $this->respond($response, 400);
         }
 
-        // $name = $this->request->getVar('name');
-        // $password = $this->request->getVar('password');
-        // $role_id = $this->request->getVar('role_id');
-
-        // $model = new User();
-        // $data = [
-        //     'name'      => $name,
-        //     'password'  => $password,
-        //     'role_id'   => $role_id,
-        // ];
-
-        // $model->insert($data);
-        // $response = [
-        //     'status'   => 201,
-        //     'error'    => null,
-        //     'messages' => [
-        //         'success' => 'Data User berhasil ditambahkan.'
-        //     ]
-        // ];
-        // return $this->respondCreated($response);
-
         $requestData = $this->request->getJSON();
 
         $model = new User();
@@ -138,13 +117,14 @@ class UserController extends ResourceController
         if ($existingData) {
             return $this->fail('Data dengan nama ini sudah ada di database.', 409); 
         } else {
+            $hashedPassword = password_hash($requestData->$password, PASSWORD_DEFAULT);
             $model->insert([
                 $name => $requestData->$name,
-                $password => $requestData->$password,
+                $password => $hashedPassword,
                 $role_id => $requestData->$role_id,
             ]);
 
-            return $this->respondCreated(['message' => 'Data berhasil ditambahkan']); // 201: Created
+            return $this->respondCreated(['message' => 'Data berhasil ditambahkan']);
         }
     }
 

@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\User;
+use \Firebase\JWT\JWT;
+
 
 class AuthController extends ResourceController
 {
@@ -12,12 +14,6 @@ class AuthController extends ResourceController
 
     public function login()
     {
-        // Mengizinkan semua origin
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-        // Validasi data masukan
 
         $requestData = (array) $this->request->getJSON();
 
@@ -34,15 +30,28 @@ class AuthController extends ResourceController
         $model = new User();
         $name = $requestData['name'];
         $password = $requestData['password'];
-        var_dump($name, $password);
         // $role_id = $this->request->getJSON('role_id');
 
-        $user = $model->where('name', $name)->first();
+        // $user = $model->where('name', $name)->first();
+        $user = $model->select('user.id, user.name, user.password, user.role_id, m_user_role.role_name')
+            ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
+            ->where('user.name', $name)
+            ->first();
 
-        // if ($user  && password_verify($password, $user['password'])) {
-        if ($user  && $password === $user['password']) {
-            // $this->setToken($user['id']);
-            return $this->respond(['message' => 'Login berhasil']);
+        if ($user  && password_verify($password, $user['password'])) {
+            $secretKey = "cataloguer_secret_key_2023";
+            $payload = array(
+                'user_id' => $user['id'],
+                'username' => $user['name'],
+                'role_id' => $user['role_id'],
+                'role_name' => $user['role_name']
+            );
+
+            // Buat token JWT
+            $token = JWT::encode($payload, $secretKey, 'HS256');
+
+            // Kirim token sebagai respons
+            return $this->respond(['token' => $token, 'message' => 'Login berhasil']);
         } else {
             return $this->fail('Username atau password salah', 401);
         }
