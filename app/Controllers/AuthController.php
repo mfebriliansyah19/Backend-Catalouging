@@ -53,7 +53,7 @@ class AuthController extends ResourceController
             // Kirim token sebagai respons
             return $this->respond(['token' => $token, 'message' => 'Login berhasil']);
         } else {
-            return $this->fail('Username atau password salah', 401);
+            return $this->fail('Username / password salah', 401);
         }
     }
 

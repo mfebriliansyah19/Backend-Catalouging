@@ -29,7 +29,7 @@ class MaterialController extends ResourceController
         if (!empty($materialData)) {
             $response = [
                 'status' => 'success',
-                'message' => 'Data Material Berhasil Ditemukan',
+                'message' => 'Data Material Telah Berhasil Ditemukan',
                 'data' => $materialData
             ];
             return $this->respond($response, 200);
@@ -121,7 +121,7 @@ class MaterialController extends ResourceController
             'status'   => 201,
             'error'    => null,
             'messages' => [
-            'success' => 'Data Material berhasil ditambahkan.'
+            'success' => 'Data Material sukses ditambahkan.'
             ]
         ];
         return $this->respondCreated($response);
