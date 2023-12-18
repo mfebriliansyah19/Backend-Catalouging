@@ -18,11 +18,6 @@ class MaterialController extends ResourceController
     
     public function index()
     {
-        // Mengizinkan semua origin
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
         $model = new Material();
         $materialData = $model->getAllMaterialData();
 
@@ -45,10 +40,6 @@ class MaterialController extends ResourceController
 
     public function create()
     {
-        // Mengizinkan semua origin
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
         $validation = \Config\Services::validation();
         $validation->setRules([
@@ -129,10 +120,6 @@ class MaterialController extends ResourceController
 
     public function update($id = null)
     {
-        // Mengizinkan semua origin
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
         $validation = \Config\Services::validation();
         $validation->setRules([
@@ -164,40 +151,44 @@ class MaterialController extends ResourceController
             return $this->respond($response, 400);
         }
 
-        $materialNumber = $this->request->getVar('materialNumber');
-        $partNumber     = $this->request->getVar('partNumber');
-        $rawData        = $this->request->getVar('rawData');
-        $rawData2       = $this->request->getVar('rawData2');
-        $rawData3       = $this->request->getVar('rawData3');
-        $rawData4       = $this->request->getVar('rawData4');
-        $flag1          = $this->request->getVar('flag1');
-        $flag2          = $this->request->getVar('flag2');
-        $result         = $this->request->getVar('result');
-        $inc            = $this->request->getVar('inc');
-        $mfr            = $this->request->getVar('mfr');
-        $groupCode      = $this->request->getVar('groupCode');
-        $cat            = $this->request->getVar('cat');
-        $status         = $this->request->getVar('status');
-        $link           = $this->request->getVar('link');
+        $materialNumber         = $this->request->getVar('materialNumber');
+        $partNumber             = $this->request->getVar('partNumber');
+        $rawData                = $this->request->getVar('rawData');
+        $rawData2               = $this->request->getVar('rawData2');
+        $rawData3               = $this->request->getVar('rawData3');
+        $rawData4               = $this->request->getVar('rawData4');
+        $flag1                  = $this->request->getVar('flag1');
+        $flag2                  = $this->request->getVar('flag2');
+        $result                 = $this->request->getVar('result');
+        $attributeValue         = $this->request->getVar('attribute_value');
+        $globalAttributeValue   = $this->request->getVar('global_attribute_value');
+        $inc                    = $this->request->getVar('inc');
+        $mfr                    = $this->request->getVar('mfr');
+        $groupCode              = $this->request->getVar('groupCode');
+        $cat                    = $this->request->getVar('cat');
+        $status                 = $this->request->getVar('status');
+        $link                   = $this->request->getVar('link');
 
         $model = new Material();
 
         $data = [
-        'material_number'   =>   $materialNumber ,
-        'part_number'       =>   $partNumber,
-        'raw_data'          =>   $rawData,
-        'raw_data2'         =>   $rawData2,
-        'raw_data3'         =>   $rawData3,
-        'raw_data4'         =>   $rawData4,
-        'flag1'             =>   $flag1,
-        'flag2'             =>   $flag2,
-        'result'            =>   $result,
-        'inc'               =>   $inc,
-        'mfr'               =>   $mfr,
-        'group_code'        =>   $groupCode,
-        'cat'               =>   $cat,
-        'status'            =>   $status,
-        'link'              =>   $link           
+        'material_number'           =>   $materialNumber ,
+        'part_number'               =>   $partNumber,
+        'raw_data'                  =>   $rawData,
+        'raw_data2'                 =>   $rawData2,
+        'raw_data3'                 =>   $rawData3,
+        'raw_data4'                 =>   $rawData4,
+        'flag1'                     =>   $flag1,
+        'flag2'                     =>   $flag2,
+        'result'                    =>   $result,
+        'attribute_value'           =>   $attributeValue,
+        'global_attribute_value'    =>   $globalAttributeValue,
+        'inc'                       =>   $inc,
+        'mfr'                       =>   $mfr,
+        'group_code'                =>   $groupCode,
+        'cat'                       =>   $cat,
+        'status'                    =>   $status,
+        'link'                      =>   $link           
         ];
 
         $model->update($id, $data);
@@ -210,44 +201,9 @@ class MaterialController extends ResourceController
         return $this->respondCreated($response);
     }
 
-    // public function updateCat($id)
-    // {
-    //     try {
-    //         $newCat = $this->request->getVar('newCat');
-    //         $model = new Material();
-    //         $result = $model->updateCat($id, $newCat);
-
-    //         if ($result) {
-    //             $response = [
-    //                 'status' => 'success',
-    //                 'message' => 'Cataloguer berhasil diupdate'
-    //             ];
-    //             return $this->respond($response, 200);
-    //         } else {
-    //             $response = [
-    //                 'status' => 'error',
-    //                 'message' => 'Gagal mengupdate cataloguer'
-    //             ];
-    //             return $this->respond($response, 400);
-    //         }
-    //     } catch (\Exception $e) {
-    //         $response = [
-    //             'status' => 'error',
-    //             'message' => $e->getMessage()
-    //         ];
-    //         return $this->respond($response, 500);
-    //     }
-    // }
-
     public function bulkInsertFromExcel()
     {
-        // Mengizinkan semua origin
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
         $file = $this->request->getFile('excel_file');
-        // var_dump($file->getExtension());
 
         if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
             // Simpan file Excel ke server
@@ -282,9 +238,8 @@ class MaterialController extends ResourceController
                     'cat' => $sheet->getCell('M' . $row)->getValue(),
                     'status' => $sheet->getCell('N' . $row)->getValue(),
                     'link' => $sheet->getCell('O' . $row)->getValue(),
-                    // Sesuaikan dengan kolom di Excel dan tabel database
                 ];
-                var_dump($rowData);
+                
                 $dataToInsert[] = $rowData;
             }
 
@@ -302,20 +257,14 @@ class MaterialController extends ResourceController
 
     public function updateINCByIDs()
     {
-        // Mengizinkan semua origin
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
 
         if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
             http_response_code(200);
             exit();
         }
 
-        // Melanjutkan pemrosesan hanya untuk metode POST
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            http_response_code(405); // Method Not Allowed
+            http_response_code(405);
             exit();
         }
 
@@ -340,10 +289,7 @@ class MaterialController extends ResourceController
     {
         $requestData = $this->request->getJSON();
 
-        // Ambil INC dari data yang diterima
         $cat = $requestData->cat;
-
-        // Ambil array IDs dari data yang diterima
         $IDs = $requestData->IDs;
 
         $model = new Material();
@@ -352,6 +298,38 @@ class MaterialController extends ResourceController
         }
 
         return $this->respond(['message' => 'Data updated with cat successfully'], 200);
+    }
+
+    public function updateQcByIDs()
+    {
+        $requestData = $this->request->getJSON();
+
+ 
+        $qc = $requestData->qc;
+        $IDs = $requestData->IDs;
+
+        $model = new Material();
+        foreach ($IDs as $id) {        
+            $model->updateQc($id, $qc);
+        }
+
+        return $this->respond(['message' => 'Data updated with qc successfully'], 200);
+    }
+
+    public function updateStatusByIDs()
+    {
+        $requestData = $this->request->getJSON();
+
+ 
+        $status = $requestData->status;
+        $IDs = $requestData->IDs;
+
+        $model = new Material();
+        foreach ($IDs as $id) {        
+            $model->updateStatus($id, $status);
+        }
+
+        return $this->respond(['message' => 'Data updated with status successfully'], 200);
     }
 
     public function delete($id = null)

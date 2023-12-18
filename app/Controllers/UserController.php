@@ -43,13 +43,31 @@ class UserController extends ResourceController
     }
 
     public function getCataloguer() {
-        // Mengizinkan semua origin
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
         $model = new User();
         $userData = $model->getCatUser();
+        // return $this->respond($data,200);
+
+        if(!empty($userData)){
+            $response = [
+                'status' => 'success',
+                'message' => 'Data Cataloguer Berhasil Ditemukan',
+                'data' => $userData
+            ];
+            return $this->respond($response,200);
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Data User Tidak Ditemukan!!',
+                'data' => []
+            ];
+            return $this->respond($response, 404);
+        }
+    }
+    
+    public function getUserByRole($id) {
+        $model = new User();
+        $userData = $model->getUserByRole($id);
         // return $this->respond($data,200);
 
         if(!empty($userData)){

@@ -12,16 +12,24 @@ class User extends Model
     protected $allowedFields    = ['name','password','role_id'];
 
     public function getAllUserData() {
-        return $this->select('user.name AS userName, user.password AS userPassword, user.role_id AS userRoleId, m_user_role.role_name AS userRole')
+        return $this->select('user.name AS userName, user.role_id AS userRoleId, m_user_role.role_name AS userRole')
                     ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
                     ->orderBy('user.id')
                     // ->asArray()
                     ->findAll();
     }
 
-    public function getCatUser() {
+    // public function getCatUser() {
+    //     return $this->select('user.id AS userId, user.name AS userName, m_user_role.role_name AS userRole')
+    //                 ->where(['user.role_id' => 4])
+    //                 ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
+    //                 ->orderBy('user.id')
+    //                 // ->asArray()
+    //                 ->findAll();
+    // }
+    public function getUserByRole($id) {
         return $this->select('user.id AS userId, user.name AS userName, m_user_role.role_name AS userRole')
-                    ->where(['user.role_id' => 4])
+                    ->where(['user.role_id' => $id])
                     ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
                     ->orderBy('user.id')
                     // ->asArray()

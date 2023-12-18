@@ -25,6 +25,7 @@ class Database extends Config
      * The default database connection.
      */
     public array $default = [
+        // 'DSN'          => 'MySQLi://sts:cataloguing@localhosot:3306/cataloguing_tool',
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'sts',

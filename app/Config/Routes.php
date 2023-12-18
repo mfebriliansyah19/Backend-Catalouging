@@ -11,9 +11,12 @@ use CodeIgniter\Router\RouteCollection;
 // $routes->get('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 $routes->post('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
 $routes->post('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
+$routes->post('attribute/bulkInsert', 'AttributeController::bulkInsertFromExcel');
 
 $routes->post('update-inc-by-ids', 'MaterialController::updateINCByIDs');
 $routes->post('update-cat-by-ids', 'MaterialController::updatecatByIDs');
+$routes->post('update-qc-by-ids', 'MaterialController::updateQcByIDs');
+$routes->post('update-status-by-ids', 'MaterialController::updateStatusByIDs');
 
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
@@ -23,6 +26,7 @@ $routes->get('globalattribute', 'globalattributeController::index');
 $routes->get('group', 'groupController::index');
 $routes->get('user', 'userController::index');
 $routes->get('userCat', 'userController::getCataloguer');
+$routes->get('userByRole/(:num)', 'userController::getUserByRole/$1');
 
 
 $routes->post('material', 'MaterialController::create');

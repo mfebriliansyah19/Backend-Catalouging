@@ -4,11 +4,11 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\Attribute;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class AttributeController extends ResourceController
 {
-        protected $modelName = 'App\Models\Attribute
-    ';
+        protected $modelName = 'App\Models\Attribute';
 
     /**
      * Return an array of resource objects, themselves in array format
@@ -166,6 +166,47 @@ class AttributeController extends ResourceController
             ]
         ];
         return $this->respond($response, 200);
+    }
+
+    public function bulkInsertFromExcel()
+    {
+        $file = $this->request->getFile('excel_file');
+
+        if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
+            // Simpan file Excel ke server
+            $file->move(WRITEPATH . 'uploads');
+
+            // Path file Excel yang diunggah
+            $filePath = WRITEPATH . 'uploads/' . $file->getName();
+
+            // Load file Excel menggunakan PHPSpreadsheet
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+
+            $dataToInsert = [];
+            $highestRow = $sheet->getHighestRow();
+
+            // Mulai dari baris kedua karena baris pertama mungkin berisi header
+            for ($row = 2; $row <= $highestRow; $row++) {
+                $rowData = [
+                    'inc'  => $sheet->getCell('A' . $row)->getValue(),
+                    'attribute_code'  => $sheet->getCell('B' . $row)->getValue(),
+                    'attribute_name'  => $sheet->getCell('C' . $row)->getValue(),
+                    'sequence'  => $sheet->getCell('D' . $row)->getValue(),
+                ];
+                
+                $dataToInsert[] = $rowData;
+            }
+            // var_dump($rowData);
+            $model = new Attribute();
+            $model->insertBatch($dataToInsert);
+            // Hapus file Excel dari server
+            unlink($filePath);
+
+            return "Bulk insert from Excel to database successful!";
+        } else {
+            return "Invalid file or file type. Please upload an Excel file (.xlsx).";
+        }
     }
 
     public function delete($id = null)
