@@ -1,0 +1,8 @@
+CRITICAL - 2023-12-19 10:07:40 --> Undefined property: stdClass::$inc
+in APPPATH\Controllers\MaterialController.php on line 275.
+ 1 APPPATH\Controllers\MaterialController.php(275): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MaterialController->updateINCByIDs()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')

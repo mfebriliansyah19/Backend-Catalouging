@@ -1,0 +1,8 @@
+CRITICAL - 2023-12-13 02:05:17 --> Too few arguments to function App\Models\User::getUserByRole(), 0 passed in D:\Kerja\Cataloguing Tool\Backend-Catalouging\app\Controllers\UserController.php on line 74 and exactly 1 expected
+in APPPATH\Models\User.php on line 30.
+ 1 APPPATH\Controllers\UserController.php(74): App\Models\User->getUserByRole()
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->getUserByRole()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH\index.php(87): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Kerja\\Cataloguing Tool\\Backend-Catalouging\\public\\index.php')
