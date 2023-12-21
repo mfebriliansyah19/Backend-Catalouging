@@ -115,9 +115,7 @@ class IncController extends ResourceController
                 $rowData = [
                     'INC'  => $sheet->getCell('A' . $row)->getValue(),
                     'INC_NAME'  => $sheet->getCell('B' . $row)->getValue(),
-                    // Sesuaikan dengan kolom di Excel dan tabel database
                 ];
-                var_dump($rowData);
                 $dataToInsert[] = $rowData;
             }
             

@@ -1,7 +1,7 @@
 <?php
 
 use App\Controllers\MaterialController;
-// use App\Controllers\IncController;
+use App\Controllers\IncController;
 use CodeIgniter\Router\RouteCollection;
 
 /**

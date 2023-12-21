@@ -224,20 +224,12 @@ class MaterialController extends ResourceController
                 // var_dump($sheet->getCell('material_number' . $row)->getValue());
                 $rowData = [
                     'material_number'  => $sheet->getCell('A' . $row)->getValue(),
-                    'part_number'  => $sheet->getCell('B' . $row)->getValue(),
-                    'raw_data'  => $sheet->getCell('C' . $row)->getValue(),
-                    'raw_data2'  => $sheet->getCell('D' . $row)->getValue(),
-                    'raw_data3'  => $sheet->getCell('E' . $row)->getValue(),
-                    'raw_data4'  => $sheet->getCell('F' . $row)->getValue(),
-                    'flag1'  => $sheet->getCell('G' . $row)->getValue(),
-                    'flag2'  => $sheet->getCell('H' . $row)->getValue(),
-                    'result'  => $sheet->getCell('I' . $row)->getValue(),
-                    'inc' => $sheet->getCell('J' . $row)->getValue(),
-                    'mfr' => $sheet->getCell('K' . $row)->getValue(),
-                    'group_code' => $sheet->getCell('L' . $row)->getValue(),
-                    'cat' => $sheet->getCell('M' . $row)->getValue(),
-                    'status' => $sheet->getCell('N' . $row)->getValue(),
-                    'link' => $sheet->getCell('O' . $row)->getValue(),
+                    'raw_data'  => $sheet->getCell('B' . $row)->getValue(),
+                    'raw_data2'  => $sheet->getCell('C' . $row)->getValue(),
+                    'raw_data3'  => $sheet->getCell('D' . $row)->getValue(),
+                    'raw_data4'  => $sheet->getCell('E' . $row)->getValue(),
+                    'mfr' => $sheet->getCell('F' . $row)->getValue(),
+                    'part_number'  => $sheet->getCell('G' . $row)->getValue(),
                 ];
                 
                 $dataToInsert[] = $rowData;
