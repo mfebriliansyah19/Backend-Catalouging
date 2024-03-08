@@ -18,25 +18,54 @@ class MaterialController extends ResourceController
     
     public function index()
     {
+        $page = $this->request->getGet('page') ?? 1;
+        $perPage = $this->request->getGet('perPage') ?? 50;
+        $searchQueries = $this->request->getGet(); // Get all search parameters
+
         $model = new Material();
-        $materialData = $model->getAllMaterialData();
+        $materialData = $model->getAllMaterialData($page, $perPage, $searchQueries);
 
         if (!empty($materialData)) {
             $response = [
                 'status' => 'success',
                 'message' => 'Data Material Telah Berhasil Ditemukan',
-                'data' => $materialData
+                'data' => $materialData,
             ];
             return $this->respond($response, 200);
         } else {
             $response = [
                 'status' => 'error',
                 'message' => 'Data Material Tidak Ditemukan!!',
-                'data' => []
+                'data' => [],
             ];
             return $this->respond($response, 404);
         }
     }
+
+    public function search()
+{
+    $page = $this->request->getVar('page') ?? 1;
+    $perPage = $this->request->getVar('perPage') ?? 50;
+    $searchQueries = $this->request->getVar('payload');
+    $model = new Material();
+    $materialData = $model->searchMaterialData($page, $perPage, $searchQueries);
+
+    if (!empty($materialData)) {
+        $response = [
+            'status' => 'success',
+            'message' => 'Data Material berhasil ditemukan',
+            'data' => $materialData,
+        ];
+        return $this->respond($response, 200);
+    } else {
+        $response = [
+            'status' => 'error',
+            'message' => 'Data Material tidak ditemukan',
+            'data' => [],
+        ];
+        return $this->respond($response, 404);
+    }
+}
 
     public function create()
     {
@@ -57,7 +86,7 @@ class MaterialController extends ResourceController
             'groupCode'      => 'required',
             'cat'            => 'required',
             'status'         => 'required',
-            'link'           => 'required'
+            'link'           => 'required',
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -86,25 +115,27 @@ class MaterialController extends ResourceController
         $cat            = $this->request->getVar('cat');
         $status         = $this->request->getVar('status');
         $link           = $this->request->getVar('link');
+        // $history        = $this->request->getVar('history');
 
         $model = new Material();
 
         $data = [
-        'materialNumber' =>   $materialNumber ,
-        'partNumber' =>   $partNumber,
-        'rawData'    =>   $rawData,
-        'rawData2'   =>   $rawData2,
-        'rawData3'   =>   $rawData3,
-        'rawData4'   =>   $rawData4,
-        'flag1'      =>   $flag1,
-        'flag2'      =>   $flag2,
-        'result'     =>   $result,
-        'inc'        =>   $inc,
-        'mfr'        =>   $mfr,
-        'groupCode'  =>   $groupCode,
-        'cat'        =>   $cat,
-        'status'     =>   $status,
-        'link'       =>   $link           
+        'materialNumber'    =>   $materialNumber ,
+        'partNumber'        =>   $partNumber,
+        'rawData'           =>   $rawData,
+        'rawData2'          =>   $rawData2,
+        'rawData3'          =>   $rawData3,
+        'rawData4'          =>   $rawData4,
+        'flag1'             =>   $flag1,
+        'flag2'             =>   $flag2,
+        'result'            =>   $result,
+        'inc'               =>   $inc,
+        'mfr'               =>   $mfr,
+        'groupCode'         =>   $groupCode,
+        'cat'               =>   $cat,
+        'status'            =>   $status,
+        'link'              =>   $link,
+        // 'history'           =>   $history        
         ];
 
         $model->insert($data);
@@ -124,20 +155,6 @@ class MaterialController extends ResourceController
         $validation = \Config\Services::validation();
         $validation->setRules([
             'materialNumber' => 'required',
-            // 'partNumber'     => 'required',
-            // 'rawData'        => 'required',
-            // 'rawData2'       => 'required',
-            // 'rawData3'       => 'required',
-            // 'rawData4'       => 'required',
-            // 'flag1'          => 'required',
-            // 'flag2'          => 'required',
-            // 'result'         => 'required',
-            // 'inc'            => 'required',
-            // 'mfr'            => 'required',
-            // 'groupCode'      => 'required',
-            // 'cat'            => 'required',
-            // 'status'         => 'required',
-            // 'link'           => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -168,6 +185,7 @@ class MaterialController extends ResourceController
         $cat                    = $this->request->getVar('cat');
         $status                 = $this->request->getVar('status');
         $link                   = $this->request->getVar('link');
+        $history                = $this->request->getVar('history');
 
         $model = new Material();
 
@@ -188,7 +206,8 @@ class MaterialController extends ResourceController
         'group_code'                =>   $groupCode,
         'cat'                       =>   $cat,
         'status'                    =>   $status,
-        'link'                      =>   $link           
+        'link'                      =>   $link,
+        'history_complete_desc'     =>   $history 
         ];
 
         $model->update($id, $data);

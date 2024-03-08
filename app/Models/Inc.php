@@ -9,10 +9,10 @@ class Inc extends Model
     protected $table            = 'm_inc';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['INC','INC_NAME'];
+    protected $allowedFields    = ['id', 'INC','INC_NAME'];
 
     public function getAllIncData() {
-        return $this->select('m_inc.INC AS INC, m_inc.INC_NAME AS INCName')
+        return $this->select('id, m_inc.INC AS INC, m_inc.INC_NAME AS INCName')
                     // ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
                     // ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
                     // ->groupBy('d_material.material_number')

@@ -9,17 +9,21 @@ class Material extends Model
     protected $table            = 'd_material';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['material_number', 'part_number', 'raw_data', 'raw_data2', 'raw_data3', 'raw_data4', 'flag1', 'flag2', 'result', 'attribute_value', 'global_attribute_value', 'inc', 'mfr', 'group_code', 'cat', 'qc', 'status', 'link'];
+    protected $allowedFields    = ['material_number', 'part_number', 'raw_data', 'raw_data2', 'raw_data3', 'raw_data4', 'flag1', 'flag2', 'result', 'attribute_value', 'global_attribute_value', 'inc', 'mfr', 'group_code', 'cat', 'qc', 'status', 'link', 'complete_live_description', 'history_complete_desc'];
 
     // Mengambil Semua Data Material
-    public function getAllMaterialData() {
-        $materials = $this->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.sequence, m_group.group_name AS groupName')
+    public function getAllMaterialData($page = 1, $perPage = 50) {
+
+        $offset = ($page - 1) * $perPage;
+        $offset = max(0, $offset);
+
+        $materials = $this->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.sequence, m_group.group_name AS groupName')
                 ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
                 ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
                 ->join('m_group', 'd_material.group_code = m_group.group_code', 'left')
                 ->orderBy('d_material.id')
                 ->asArray()
-                ->findAll();
+                ->findAll($perPage, $offset);
 
         $result = [];
 
@@ -45,6 +49,8 @@ class Material extends Model
                     "qc" => $material["qc"],
                     "status" => $material["status"],
                     "link" => $material["link"],
+                    "completeDesc" => $material["completeDesc"],
+                    "history" => $material["historyDesc"],
                     "incName" => $material["incName"],
                     "attributes" => [],
                     "attributeValue" => $material["attributeValue"],
@@ -69,8 +75,82 @@ class Material extends Model
         unset($materialData);
 
         $result = array_values($result);
+        // var_dump('Haloo');
 
         return $result;
+    }
+
+    public function searchMaterialData($page, $perPage, $searchQueries)
+    {
+        $offset = ($page - 1) * $perPage;
+        $offset = max(0, $offset);
+
+        $builder = $this->db->table('d_material');
+
+        $builder->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, m_inc.inc_name AS incName, m_group.group_name AS groupName');
+        $builder->join('m_inc', 'd_material.inc = m_inc.inc', 'left');
+        $builder->join('m_group', 'd_material.group_code = m_group.group_code', 'left');
+        $builder->orderBy('d_material.id');
+
+        // Constructing the search conditions
+        foreach ($searchQueries as $key => $value) {
+            if (!empty($value)) {
+                switch ($key) {
+                    case 'searchInc':
+                        $builder->like('d_material.inc', '%' . $value . '%');
+                        break;
+                    case 'searchMfr':
+                        $builder->like('d_material.mfr', '%' . $value . '%');
+                        break;
+                    case 'searchPartNumber':
+                        $builder->like('d_material.part_number', '%' . $value . '%');
+                        break;
+                    case 'searchDescriptionAfter':
+                        $builder->like('d_material.result', '%' . $value . '%');
+                        break;
+                    case 'searchNumber':
+                        $builder->like('d_material.material_number', '%' . $value . '%');
+                        break;
+                    case 'searchFlag1':
+                        $builder->like('d_material.flag1', '%' . $value . '%');
+                        break;
+                    case 'searchStatus':
+                        $builder->like('d_material.status', '%' . $value . '%');
+                        break;
+                    case 'searchDescriptionBefore':
+                        $builder->like('d_material.raw_data', '%' . $value . '%');
+                        break;
+                    case 'searchAll':
+                        // Search in every column
+                        $allowedFields = [
+                            'd_material.inc',
+                            'd_material.mfr',
+                            'd_material.part_number',
+                            'd_material.result',
+                            'd_material.material_number',
+                            'd_material.flag1',
+                            'd_material.status',
+                            'd_material.raw_data'
+                        ];
+                        $builder->groupStart();
+                        foreach ($allowedFields as $field) {
+                            $builder->orLike($field, '%' . $value . '%');
+                        }
+                        $builder->groupEnd();
+                        break;
+                }
+            }
+        }
+
+        // Getting total count of results without pagination
+        $totalResults = $builder->countAllResults(false);
+
+        // Applying pagination and fetching data
+        $builder->limit($perPage, $offset);
+
+        $materials = $builder->get()->getResult();
+
+        return ['materials' => $materials, 'totalResults' => $totalResults];
     }
 
     public function updateINC($id, $inc)
