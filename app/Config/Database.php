@@ -25,11 +25,11 @@ class Database extends Config
      * The default database connection.
      */
     public array $default = [
-        // 'DSN'          => 'MySQLi://sts:cataloguing@localhost:3306/cataloguing_tool',
-        'DSN'          => '',
+        'DSN'          => 'MySQLi://sts:cataloguing@localhost:3306/cataloguing_tool',
+        // 'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
+        'username'     => 'sts',
+        'password'     => 'cataloguing',
         'database'     => 'cataloguing_tool',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
