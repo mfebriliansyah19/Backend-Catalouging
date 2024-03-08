@@ -12,7 +12,7 @@ class User extends Model
     protected $allowedFields    = ['name','password','role_id'];
 
     public function getAllUserData() {
-        return $this->select('user.name AS userName, user.role_id AS userRoleId, m_user_role.role_name AS userRole')
+        return $this->select('user.id AS userId, user.name AS userName, user.role_id AS userRoleId, m_user_role.role_name AS userRole')
                     ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
                     ->orderBy('user.id')
                     // ->asArray()

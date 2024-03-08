@@ -126,7 +126,6 @@ class AttributeController extends ResourceController
             'INC'                => 'required',
             'attribute_code'     => 'required',
             'attribute_name'     => 'required',
-            'attribute_value'    => 'required',
             'sequence'           => 'required'
         ]);
 
@@ -144,7 +143,6 @@ class AttributeController extends ResourceController
         $INC                = $this->request->getVar('INC');
         $attribute_code     = $this->request->getVar('attribute_code');
         $attribute_name     = $this->request->getVar('attribute_name');
-        $attribute_value    = $this->request->getVar('attribute_value');
         $sequence           = $this->request->getVar('sequence');
 
         $model = new Attribute();
@@ -153,7 +151,6 @@ class AttributeController extends ResourceController
             'inc'               => $INC,
             'attribute_code'    => $attribute_code,
             'attribute_name'    => $attribute_name,
-            'attribute_value'   => $attribute_value,
             'sequence'          => $sequence,
         ];
 
