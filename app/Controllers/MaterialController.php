@@ -42,10 +42,33 @@ class MaterialController extends ResourceController
         }
     }
 
+    public function getAllData()
+    {
+
+        $model = new Material();
+        $materialData = $model->getAllData();
+
+        if (!empty($materialData)) {
+            $response = [
+                'status' => 'success',
+                'message' => 'Data Material Telah Berhasil Ditemukan',
+                'data' => $materialData,
+            ];
+            return $this->respond($response, 200);
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Data Material Tidak Ditemukan!!',
+                'data' => [],
+            ];
+            return $this->respond($response, 404);
+        }
+    }
+
     public function search()
 {
     $page = $this->request->getVar('page') ?? 1;
-    $perPage = $this->request->getVar('perPage') ?? 50;
+    $perPage = $this->request->getVar('perPage') ?? 200;
     $searchQueries = $this->request->getVar('payload');
     $model = new Material();
     $materialData = $model->searchMaterialData($page, $perPage, $searchQueries);
@@ -135,6 +158,7 @@ class MaterialController extends ResourceController
         'cat'               =>   $cat,
         'status'            =>   $status,
         'link'              =>   $link,
+        'submitted_at'      => date('Y-m-d H:i:s'),
         // 'history'           =>   $history        
         ];
 
@@ -210,7 +234,8 @@ class MaterialController extends ResourceController
         'history_complete_desc'     =>   $history 
         ];
 
-        $model->update($id, $data);
+        // $model->update($id, $data);
+        $model->updateMaterial($id, $data);
         $response = [
             'status'   => 201,
             'messages' => [
@@ -330,8 +355,7 @@ class MaterialController extends ResourceController
     public function updateStatusByIDs()
     {
         $requestData = $this->request->getJSON();
-
- 
+        
         $status = $requestData->status;
         $IDs = $requestData->IDs;
 

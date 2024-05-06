@@ -9,7 +9,7 @@ class Material extends Model
     protected $table            = 'd_material';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['material_number', 'part_number', 'raw_data', 'raw_data2', 'raw_data3', 'raw_data4', 'flag1', 'flag2', 'result', 'attribute_value', 'global_attribute_value', 'inc', 'mfr', 'group_code', 'cat', 'qc', 'status', 'link', 'complete_live_description', 'history_complete_desc'];
+    protected $allowedFields    = ['material_number', 'part_number', 'raw_data', 'raw_data2', 'raw_data3', 'raw_data4', 'flag1', 'flag2', 'result', 'attribute_value', 'global_attribute_value', 'inc', 'mfr', 'group_code', 'cat', 'qc', 'status', 'link', 'complete_live_description', 'history_complete_desc', 'submitted_at', 'update_qc_at', 'update_final_at'];
 
     // Mengambil Semua Data Material
     public function getAllMaterialData($page = 1, $perPage = 50) {
@@ -17,7 +17,7 @@ class Material extends Model
         $offset = ($page - 1) * $perPage;
         $offset = max(0, $offset);
 
-        $materials = $this->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.sequence, m_group.group_name AS groupName')
+        $materials = $this->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, d_material.submitted_at AS submittedAt, d_material.update_qc_at AS qcUpdate, d_material.update_final_at AS finalUpdate, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.sequence, m_group.group_name AS groupName')
                 ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
                 ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
                 ->join('m_group', 'd_material.group_code = m_group.group_code', 'left')
@@ -55,6 +55,9 @@ class Material extends Model
                     "attributes" => [],
                     "attributeValue" => $material["attributeValue"],
                     "globalAttributeValue" => $material["globalAttributeValue"],
+                    "submittedAt" => $material["submittedAt"],
+                    "qcUpdate" => $material["qcUpdate"],
+                    "finalUpdate" => $material["finalUpdate"],
                 ];
             }
 
@@ -80,78 +83,74 @@ class Material extends Model
         return $result;
     }
 
-    // public function searchMaterialData($page, $perPage, $searchQueries)
-    // {
-    //     $offset = ($page - 1) * $perPage;
-    //     $offset = max(0, $offset);
+    public function getAllData() {
 
-    //     $builder = $this->db->table('d_material');
+        $materials = $this->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, d_material.submitted_at AS submittedAt, d_material.update_qc_at AS qcUpdate, d_material.update_final_at AS finalUpdate, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.sequence, m_group.group_name AS groupName')
+                ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
+                ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
+                ->join('m_group', 'd_material.group_code = m_group.group_code', 'left')
+                ->orderBy('d_material.id')
+                ->asArray()
+                ->findAll();
 
-    //     $builder->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, m_inc.inc_name AS incName, m_group.group_name AS groupName');
-    //     $builder->join('m_inc', 'd_material.inc = m_inc.inc', 'left');
-    //     $builder->join('m_group', 'd_material.group_code = m_group.group_code', 'left');
-    //     $builder->orderBy('d_material.id');
+        $result = [];
 
-    //     // Constructing the search conditions
-    //     foreach ($searchQueries as $key => $value) {
-    //         if (!empty($value)) {
-    //             switch ($key) {
-    //                 case 'searchInc':
-    //                     $builder->like('d_material.inc', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchMfr':
-    //                     $builder->like('d_material.mfr', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchPartNumber':
-    //                     $builder->like('d_material.part_number', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchDescriptionAfter':
-    //                     $builder->like('d_material.result', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchNumber':
-    //                     $builder->like('d_material.material_number', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchFlag1':
-    //                     $builder->like('d_material.flag1', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchStatus':
-    //                     $builder->like('d_material.status', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchDescriptionBefore':
-    //                     $builder->like('d_material.raw_data', '%' . $value . '%');
-    //                     break;
-    //                 case 'searchAll':
-    //                     // Search in every column
-    //                     $allowedFields = [
-    //                         'd_material.inc',
-    //                         'd_material.mfr',
-    //                         'd_material.part_number',
-    //                         'd_material.result',
-    //                         'd_material.material_number',
-    //                         'd_material.flag1',
-    //                         'd_material.status',
-    //                         'd_material.raw_data'
-    //                     ];
-    //                     $builder->groupStart();
-    //                     foreach ($allowedFields as $field) {
-    //                         $builder->orLike($field, '%' . $value . '%');
-    //                     }
-    //                     $builder->groupEnd();
-    //                     break;
-    //             }
-    //         }
-    //     }
+        foreach ($materials as $material) {
+            $materialNumber = $material["materialNumber"];
+            if (!isset($result[$materialNumber])) {
+                $result[$materialNumber] = [
+                    "id" => $material["id"],
+                    "materialNumber" => $material["materialNumber"],
+                    "partNumber" => $material["partNumber"],
+                    "rawData" => $material["rawData"],
+                    "rawData2" => $material["rawData2"],
+                    "rawData3" => $material["rawData3"],
+                    "rawData4" => $material["rawData4"],
+                    "flag1" => $material["flag1"],
+                    "flag2" => $material["flag2"],
+                    "result" => $material["result"],
+                    "inc" => $material["inc"],
+                    "mfr" => $material["mfr"],
+                    "groupCode" => $material["groupCode"],
+                    "groupName" => $material["groupName"],
+                    "cat" => $material["cat"],
+                    "qc" => $material["qc"],
+                    "status" => $material["status"],
+                    "link" => $material["link"],
+                    "completeDesc" => $material["completeDesc"],
+                    "historyDesc" => $material["historyDesc"],
+                    "incName" => $material["incName"],
+                    "attributes" => [],
+                    "attributeValue" => $material["attributeValue"],
+                    "globalAttributeValue" => $material["globalAttributeValue"],
+                    "submittedAt" => $material["submittedAt"],
+                    "qcUpdate" => $material["qcUpdate"],
+                    "finalUpdate" => $material["finalUpdate"],
+                ];
+            }
 
-    //     // Getting total count of results without pagination
-    //     $totalResults = $builder->countAllResults(false);
+            $attribute = [
+                "attributeCode" => $material["attributeCode"],
+                "attributeName" => $material["attributeName"],
+                "sequence" => $material["sequence"],
+            ];
 
-    //     // Applying pagination and fetching data
-    //     $builder->limit($perPage, $offset);
+            $result[$materialNumber]["attributes"][] = $attribute;
+        }
 
-    //     $materials = $builder->get()->getResult();
+        foreach ($result as &$materialData) {
+            usort($materialData["attributes"], function ($a, $b) {
+                return $a["sequence"] - $b["sequence"];
+            });
+        }
+        unset($materialData);
 
-    //     return ['materials' => $materials, 'totalResults' => $totalResults];
-    // }
+        $result = array_values($result);
+
+        return $result;
+    }
+
+    
 
     public function searchMaterialData($page, $perPage, $searchQueries)
 {
@@ -339,8 +338,27 @@ class Material extends Model
     return ['materials' => $materials, 'totalResults' => $totalResults];
 }
 
+    public function updateMaterial($id, $data)
+    {
+        // Ambil data material sebelum diubah
+        $materialBeforeUpdate = $this->find($id);
 
+        date_default_timezone_set('Asia/Jakarta');
 
+        if ($materialBeforeUpdate['status'] !== 'QC' && $data['status'] === 'QC') {
+            $data['update_qc_at'] = date('Y-m-d H:i:s');
+        }
+        // if ($materialBeforeUpdate['status'] !== 'APPROVED' && $data['status'] === 'APPROVED') {
+        //     $data['update_final_at'] = date('Y-m-d H:i:s');
+        // }
+
+        if ($materialBeforeUpdate['status'] !== 'APPROVED' && $data['status'] === 'APPROVED') {
+            $data['update_final_at'] = date('Y-m-d H:i:s'); // Timestamp sekarang
+        }
+
+        // Lakukan pembaruan data
+        return $this->update($id, $data);
+    }
 
     public function updateINC($id, $inc)
     {
@@ -356,10 +374,32 @@ class Material extends Model
     {
         $this->where('id', $id)->set(['qc' => $qc])->update();
     }
+    // public function updateStatus($id, $status)
+    // {
+    //     $this->where('id', $id)->set(['status' => $status])->update();
+    // }
     public function updateStatus($id, $status)
-    {
-        $this->where('id', $id)->set(['status' => $status])->update();
-    }
+{
+
+    $materialBeforeUpdate = $this->find($id);
+    $data = ['status' => $status];
+
+        date_default_timezone_set('Asia/Jakarta');
+
+        if ($materialBeforeUpdate['status'] !== 'QC' && $data['status'] === 'QC') {
+            $data['update_qc_at'] = date('Y-m-d H:i:s');
+        }
+        // if ($materialBeforeUpdate['status'] !== 'APPROVED' && $data['status'] === 'APPROVED') {
+        //     $data['update_final_at'] = date('Y-m-d H:i:s');
+        // }
+
+        if ($materialBeforeUpdate['status'] !== 'APPROVED' && $data['status'] === 'APPROVED') {
+            $data['update_final_at'] = date('Y-m-d H:i:s'); // Timestamp sekarang
+        }
+
+    $this->where('id', $id)->set($data)->update();
+}
+
 
     // Assign / Update Cataloguer pada Material
     // public function updateCat($id, $newCat) {
