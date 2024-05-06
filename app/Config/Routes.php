@@ -26,6 +26,7 @@ $routes->post('update-status-by-ids', 'MaterialController::updateStatusByIDs');
 
 $routes->get('/', 'Home::index');
 $routes->get('material', 'MaterialController::index');
+$routes->get('allMaterial', 'MaterialController::getAllData');
 // $routes->get('material/search', 'MaterialController::search'); 
 $routes->post('search', 'MaterialController::search');
 $routes->get('inc', 'IncController::index');
