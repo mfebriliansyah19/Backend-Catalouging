@@ -144,10 +144,10 @@ class GroupController extends ResourceController
     
     public function bulkInsertFromExcel()
     {
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-        
+        // header("Access-Control-Allow-Origin: *");
+        // header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        // header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
         $file = $this->request->getFile('excel_file');
 
         if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {

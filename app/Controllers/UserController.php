@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\User;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class UserController extends ResourceController
 {
@@ -143,6 +144,47 @@ class UserController extends ResourceController
             ]);
 
             return $this->respondCreated(['message' => 'Data berhasil ditambahkan']);
+        }
+    }
+
+    public function bulkInsertFromExcel()
+    {
+        $file = $this->request->getFile('excel_file');
+
+        if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
+            // Simpan file Excel ke server
+            $file->move(WRITEPATH . 'uploads');
+
+            // Path file Excel yang diunggah
+            $filePath = WRITEPATH . 'uploads/' . $file->getName();
+
+            // Load file Excel menggunakan PHPSpreadsheet
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+
+            $dataToInsert = [];
+            $highestRow = $sheet->getHighestRow();
+
+            // Mulai dari baris kedua karena baris pertama mungkin berisi header
+            for ($row = 2; $row <= $highestRow; $row++) {
+                // var_dump($sheet->getCell('material_number' . $row)->getValue());
+                $rowData = [
+                    'name'  => $sheet->getCell('A' . $row)->getValue(),
+                    'password'  => password_hash($sheet->getCell('B' . $row)->getValue(), PASSWORD_DEFAULT),
+                    'role_id'  => $sheet->getCell('C' . $row)->getValue()
+                ];
+                $dataToInsert[] = $rowData;
+            }
+            
+            $this->model->insertBatch($dataToInsert);
+            // $builder->insertBatch($dataToInsert);
+
+            // Hapus file Excel dari server
+            unlink($filePath);
+
+            return "Bulk insert from Excel to database successful!";
+        } else {
+            return "Invalid file or file type. Please upload an Excel file (.xlsx).";
         }
     }
 

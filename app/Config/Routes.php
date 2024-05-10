@@ -18,6 +18,8 @@ $routes->post('inc/bulkInsert', 'IncController::bulkInsertFromExcel');
 $routes->post('material/bulkInsert', 'MaterialController::bulkInsertFromExcel');
 $routes->post('attribute/bulkInsert', 'AttributeController::bulkInsertFromExcel');
 $routes->post('group/bulkInsert', 'GroupController::bulkInsertFromExcel');
+$routes->post('global/bulkInsert', 'GlobalAttributeController::bulkInsertFromExcel');
+$routes->post('user/bulkInsert', 'UserController::bulkInsertFromExcel');
 
 $routes->post('update-inc-by-ids', 'MaterialController::updateINCByIDs');
 $routes->post('update-cat-by-ids', 'MaterialController::updatecatByIDs');

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\GlobalAttribute;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class GlobalAttributeController extends ResourceController
 {
@@ -122,6 +123,46 @@ class GlobalAttributeController extends ResourceController
             ]);
 
             return $this->respondCreated(['message' => 'Data berhasil ditambahkan']);
+        }
+    }
+
+    public function bulkInsertFromExcel()
+    {
+        $file = $this->request->getFile('excel_file');
+
+        if ($file !== null && $file->isValid() && $file->getExtension() === 'xlsx') {
+            // Simpan file Excel ke server
+            $file->move(WRITEPATH . 'uploads');
+
+            // Path file Excel yang diunggah
+            $filePath = WRITEPATH . 'uploads/' . $file->getName();
+
+            // Load file Excel menggunakan PHPSpreadsheet
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getActiveSheet();
+
+            $dataToInsert = [];
+            $highestRow = $sheet->getHighestRow();
+
+            // Mulai dari baris kedua karena baris pertama mungkin berisi header
+            for ($row = 2; $row <= $highestRow; $row++) {
+                // var_dump($sheet->getCell('material_number' . $row)->getValue());
+                $rowData = [
+                    'attribute_code'  => $sheet->getCell('A' . $row)->getValue(),
+                    'attribute_name'  => $sheet->getCell('B' . $row)->getValue(),
+                ];
+                $dataToInsert[] = $rowData;
+            }
+            
+            $this->model->insertBatch($dataToInsert);
+            // $builder->insertBatch($dataToInsert);
+
+            // Hapus file Excel dari server
+            unlink($filePath);
+
+            return "Bulk insert from Excel to database successful!";
+        } else {
+            return "Invalid file or file type. Please upload an Excel file (.xlsx).";
         }
     }
 

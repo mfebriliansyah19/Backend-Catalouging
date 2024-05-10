@@ -267,13 +267,14 @@ class MaterialController extends ResourceController
             for ($row = 2; $row <= $highestRow; $row++) {
                 // var_dump($sheet->getCell('material_number' . $row)->getValue());
                 $rowData = [
-                    'material_number'  => $sheet->getCell('A' . $row)->getValue(),
-                    'raw_data'  => $sheet->getCell('B' . $row)->getValue(),
-                    'raw_data2'  => $sheet->getCell('C' . $row)->getValue(),
-                    'raw_data3'  => $sheet->getCell('D' . $row)->getValue(),
-                    'raw_data4'  => $sheet->getCell('E' . $row)->getValue(),
-                    'mfr' => $sheet->getCell('F' . $row)->getValue(),
-                    'part_number'  => $sheet->getCell('G' . $row)->getValue(),
+                    'material_number'   => $sheet->getCell('A' . $row)->getValue(),
+                    'raw_data'          => $sheet->getCell('B' . $row)->getValue(),
+                    'raw_data2'         => $sheet->getCell('C' . $row)->getValue(),
+                    'raw_data3'         => $sheet->getCell('D' . $row)->getValue(),
+                    'raw_data4'         => $sheet->getCell('E' . $row)->getValue(),
+                    'mfr'               => $sheet->getCell('F' . $row)->getValue(),
+                    'part_number'       => $sheet->getCell('G' . $row)->getValue(),
+                    'submitted_at'      => date('Y-m-d H:i:s'),
                 ];
                 
                 $dataToInsert[] = $rowData;
