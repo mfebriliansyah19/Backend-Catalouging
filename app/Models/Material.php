@@ -12,22 +12,52 @@ class Material extends Model
     protected $allowedFields    = ['material_number', 'part_number', 'raw_data', 'raw_data2', 'raw_data3', 'raw_data4', 'flag1', 'flag2', 'result', 'attribute_value', 'global_attribute_value', 'inc', 'mfr', 'group_code', 'cat', 'qc', 'status', 'link', 'complete_live_description', 'history_complete_desc', 'submitted_at', 'update_qc_at', 'update_final_at'];
 
     // Mengambil Semua Data Material
-    public function getAllMaterialData($page = 1, $perPage = 50) {
-
+    public function getAllMaterialData($page = 1, $perPage = 50, $searchQueries = []) {
         $offset = ($page - 1) * $perPage;
         $offset = max(0, $offset);
-
-        $materials = $this->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, d_material.submitted_at AS submittedAt, d_material.update_qc_at AS qcUpdate, d_material.update_final_at AS finalUpdate, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.sequence, m_group.group_name AS groupName')
+    
+        $builder = $this->db->table('d_material');
+        $builder->select('d_material.id, d_material.material_number AS materialNumber, d_material.part_number AS partNumber, d_material.raw_data AS rawData, d_material.raw_data2 AS rawData2, d_material.raw_data3 AS rawData3, d_material.raw_data4 AS rawData4, d_material.flag1 AS flag1, d_material.flag2 AS flag2, d_material.result, d_material.attribute_value AS attributeValue, d_material.global_attribute_value AS globalAttributeValue, d_material.inc, d_material.mfr, d_material.group_code AS groupCode, d_material.cat, d_material.qc, d_material.status, d_material.link, d_material.complete_live_description AS completeDesc, d_material.history_complete_desc AS historyDesc, d_material.submitted_at AS submittedAt, d_material.update_qc_at AS qcUpdate, d_material.update_final_at AS finalUpdate, m_inc.inc_name AS incName, d_attribute.attribute_code AS attributeCode, d_attribute.attribute_name AS attributeName, d_attribute.sequence, m_group.group_name AS groupName, qc_user.name AS qcName, qc_user.role_id AS qcRole, cat_user.name AS catName, cat_user.role_id AS catRole')
                 ->join('m_inc', 'd_material.inc = m_inc.inc', 'left')
                 ->join('d_attribute', 'd_material.inc = d_attribute.inc', 'left')
                 ->join('m_group', 'd_material.group_code = m_group.group_code', 'left')
-                ->orderBy('d_material.id')
-                ->asArray()
-                ->findAll($perPage, $offset);
-
+                ->join('user AS qc_user', 'd_material.qc = qc_user.id', 'left')
+                ->join('user AS cat_user', 'd_material.cat = cat_user.id', 'left')
+                ->orderBy('d_material.id');
+    
+        // Filter by user role and name
+        if (!empty($searchQueries['role'])) {
+            if ($searchQueries['role'] == 1) {
+                // Jika role adalah 1, tidak perlu filter status
+            } elseif ($searchQueries['role'] == 3) {
+                $builder->where('(d_material.status', 'qc', true)
+                        ->orWhere('d_material.status', 'approved', true)
+                        ->groupEnd();
+            }
+        }
+    
+        // Skip username search for role 1 and 3
+        if (!in_array($searchQueries['role'], [1, 3]) && !empty($searchQueries['username'])) {
+            $builder->groupStart()
+                    ->like('qc_user.name', $searchQueries['username'])
+                    ->orLike('cat_user.name', $searchQueries['username'])
+                    ->groupEnd();
+        }
+    
+        // Getting total count of results without pagination
+        $totalResults = $builder->countAllResults(false);
+    
+        // Applying pagination and fetching data
+        $builder->limit($perPage, $offset);
+        $materials = $builder->get()->getResultArray();
+    
         $result = [];
-
         foreach ($materials as $material) {
+            // Debugging: Check if materialNumber is set
+            if (!isset($material["materialNumber"])) {
+                throw new \Exception("MaterialNumber is not set for id: " . $material["id"]);
+            }
+            
             $materialNumber = $material["materialNumber"];
             if (!isset($result[$materialNumber])) {
                 $result[$materialNumber] = [
@@ -58,30 +88,33 @@ class Material extends Model
                     "submittedAt" => $material["submittedAt"],
                     "qcUpdate" => $material["qcUpdate"],
                     "finalUpdate" => $material["finalUpdate"],
+                    "qcName" => $material["qcName"],
+                    "qcRole" => $material["qcRole"],
+                    "catName" => $material["catName"],
+                    "catRole" => $material["catRole"]
                 ];
             }
-
+    
             $attribute = [
                 "attributeCode" => $material["attributeCode"],
                 "attributeName" => $material["attributeName"],
                 "sequence" => $material["sequence"],
             ];
-
+    
             $result[$materialNumber]["attributes"][] = $attribute;
         }
-
+    
         foreach ($result as &$materialData) {
             usort($materialData["attributes"], function ($a, $b) {
                 return $a["sequence"] - $b["sequence"];
             });
         }
         unset($materialData);
-
+    
         $result = array_values($result);
-        // var_dump('Haloo');
-
-        return $result;
-    }
+    
+        return ['materials' => $result, 'totalResults' => $totalResults];
+    }        
 
     public function getAllData() {
 

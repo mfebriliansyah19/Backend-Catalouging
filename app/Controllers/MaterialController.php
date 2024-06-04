@@ -16,31 +16,35 @@ class MaterialController extends ResourceController
      * @return mixed
      */
     
-    public function index()
-    {
-        $page = $this->request->getGet('page') ?? 1;
-        $perPage = $this->request->getGet('perPage') ?? 50;
-        $searchQueries = $this->request->getGet(); // Get all search parameters
-
-        $model = new Material();
-        $materialData = $model->getAllMaterialData($page, $perPage, $searchQueries);
-
-        if (!empty($materialData)) {
-            $response = [
-                'status' => 'success',
-                'message' => 'Data Material Telah Berhasil Ditemukan',
-                'data' => $materialData,
-            ];
-            return $this->respond($response, 200);
-        } else {
-            $response = [
-                'status' => 'error',
-                'message' => 'Data Material Tidak Ditemukan!!',
-                'data' => [],
-            ];
-            return $this->respond($response, 404);
-        }
-    }
+     public function index()
+     {
+         $page = $this->request->getGet('page') ?? 1;
+         $perPage = $this->request->getGet('perPage') ?? 50;
+         $searchQueries = [
+             'role' => $this->request->getGet('role'),
+             'username' => $this->request->getGet('username')
+         ];
+     
+         $model = new Material();
+         $materialData = $model->getAllMaterialData($page, $perPage, $searchQueries);
+     
+         if (!empty($materialData['materials'])) {
+             $response = [
+                 'status' => 'success',
+                 'message' => 'Data Material Telah Berhasil Ditemukan',
+                 'data' => $materialData,
+             ];
+             return $this->respond($response, 200);
+         } else {
+             $response = [
+                 'status' => 'error',
+                 'message' => 'Data Material Tidak Ditemukan!!',
+                 'data' => [],
+             ];
+             return $this->respond($response, 404);
+         }
+     }
+     
 
     public function getAllData()
     {

@@ -30,6 +30,7 @@ class Database extends Config
         'hostname'     => 'localhost',
         'username'     => 'sts',
         'password'     => 'cataloguing',
+        // 'password'     => '',
         'database'     => 'cataloguing_tool',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

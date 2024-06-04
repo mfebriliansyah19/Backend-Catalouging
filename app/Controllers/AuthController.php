@@ -33,7 +33,7 @@ class AuthController extends ResourceController
         // $role_id = $this->request->getJSON('role_id');
 
         // $user = $model->where('name', $name)->first();
-        $user = $model->select('user.id, user.name, user.password, user.role_id, m_user_role.role_name')
+        $user = $model->select('user.id AS userId, user.name, user.password, user.role_id, m_user_role.role_name')
             ->join('m_user_role', 'user.role_id = m_user_role.role_id', 'left')
             ->where('user.name', $name)
             ->first();
@@ -41,7 +41,7 @@ class AuthController extends ResourceController
         if ($user  && password_verify($password, $user['password'])) {
             $secretKey = "cataloguer_secret_key_2023";
             $payload = array(
-                'user_id' => $user['id'],
+                'user_id' => $user['userId'],
                 'username' => $user['name'],
                 'role_id' => $user['role_id'],
                 'role_name' => $user['role_name']
