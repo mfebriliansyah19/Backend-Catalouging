@@ -16,7 +16,7 @@ class MaterialController extends ResourceController
      * @return mixed
      */
     
-     public function index()
+    public function index()
      {
          $page = $this->request->getGet('page') ?? 1;
          $perPage = $this->request->getGet('perPage') ?? 50;
@@ -44,6 +44,34 @@ class MaterialController extends ResourceController
              return $this->respond($response, 404);
          }
      }
+    
+     public function getItems() {
+        $page = $this->request->getGet('page') ?? 1;
+        $perPage = $this->request->getGet('perPage') ?? 50;
+        // $searchQueries = [
+        //     'role' => $this->request->getGet('role'),
+        //     'username' => $this->request->getGet('username')
+        // ];
+    
+        $model = new Material();
+        $materialData = $model->getAllMaterialData($page, $perPage);
+    
+        if (!empty($materialData['materials'])) {
+            $response = [
+                'status' => 'success',
+                'message' => 'Data Material Telah Berhasil Ditemukan',
+                'data' => $materialData,
+            ];
+            return $this->respond($response, 200);
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Data Material Tidak Ditemukan!!',
+                'data' => [],
+            ];
+            return $this->respond($response, 404);
+        }
+     }
      
 
     public function getAllData()
@@ -69,30 +97,66 @@ class MaterialController extends ResourceController
         }
     }
 
-    public function search()
-{
-    $page = $this->request->getVar('page') ?? 1;
-    $perPage = $this->request->getVar('perPage') ?? 200;
-    $searchQueries = $this->request->getVar('payload');
-    $model = new Material();
-    $materialData = $model->searchMaterialData($page, $perPage, $searchQueries);
+//     public function search()
+// {
+//     $page = $this->request->getVar('page') ?? 1;
+//     $perPage = $this->request->getVar('perPage') ?? 200;
+//     $searchQueries = $this->request->getVar('payload');
+//     $model = new Material();
+//     $materialData = $model->searchMaterialData($page, $perPage, $searchQueries);
 
-    if (!empty($materialData)) {
-        $response = [
-            'status' => 'success',
-            'message' => 'Data Material berhasil ditemukan',
-            'data' => $materialData,
-        ];
-        return $this->respond($response, 200);
-    } else {
-        $response = [
-            'status' => 'error',
-            'message' => 'Data Material tidak ditemukan',
-            'data' => [],
-        ];
-        return $this->respond($response, 404);
-    }
-}
+//     if (!empty($materialData)) {
+//         $response = [
+//             'status' => 'success',
+//             'message' => 'Data Material berhasil ditemukan',
+//             'data' => $materialData,
+//         ];
+//         return $this->respond($response, 200);
+//     } else {
+//         $response = [
+//             'status' => 'error',
+//             'message' => 'Data Material tidak ditemukan',
+//             'data' => [],
+//         ];
+//         return $this->respond($response, 404);
+//     }
+// }
+
+        public function search()
+        {
+            $page = $this->request->getVar('page') ?? 1;
+            $perPage = $this->request->getVar('perPage') ?? 200;
+            $searchQueries = $this->request->getVar('payload');
+
+            // Ambil parameter user yang berisi role dan username
+            $user = (object) $this->request->getVar('user');
+            $role = $user->role ?? null;
+            $username = $user->username ?? null;
+
+            // Tambahkan role dan username ke searchQueries
+            $searchQueries->role = $role;
+            $searchQueries->username = $username;
+            // var_dump('searchQuery', $searchQueries);
+            $model = new Material();
+            $materialData = $model->searchMaterialData($page, $perPage, $searchQueries);
+
+            if (!empty($materialData['materials'])) {
+                $response = [
+                    'status' => 'success',
+                    'message' => 'Data Material berhasil ditemukan',
+                    'data' => $materialData,
+                ];
+                return $this->respond($response, 200);
+            } else {
+                $response = [
+                    'status' => 'error',
+                    'message' => 'Data Material tidak ditemukan',
+                    'data' => [],
+                ];
+                return $this->respond($response, 404);
+            }
+        }
+
 
     public function create()
     {

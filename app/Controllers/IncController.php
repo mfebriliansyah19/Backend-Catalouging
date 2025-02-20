@@ -79,7 +79,7 @@ class IncController extends ResourceController
     $existingData = $model->where($INC_NAME, $requestData->$INC_NAME)->first();
 
     if ($existingData) {
-        return $this->fail('Data dengan nama ini sudah ada di database.', 409); // 409: Conflict
+        return $this->fail('Data ini sudah ada di database.', 409); // 409: Conflict
     } else {
         $model->insert([
             $INC => $requestData->$INC,
